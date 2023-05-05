@@ -1,0 +1,226 @@
+#body {
+  background-color: var(--background-content-color);
+  height: 100%;
+  min-width: 700px;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#titlu {
+  padding-top: 22px;
+  display: flex;
+  justify-content: center;
+  width: 86%;
+}
+
+#titlu-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+}
+
+#pag-calendar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 90px;
+  width: 86%;
+  min-width: 600px;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#divizii-div {
+  padding-bottom: 50px;
+}
+
+#divizii {
+  background-color: #0d1760;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+#divizii > * {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#divizie {
+  height: fit-content;
+  width: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dfebf3;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+}
+.selectedDivizie {
+  background-color: var(--selected-blue-color) !important;
+  color: var(--white) !important;
+}
+#divizie:active {
+  background-color: rgb(51, 51, 146);
+  color: white;
+}
+
+#tip-meci-div {
+  padding-bottom: 50px;
+}
+
+#tip-meci {
+  background-color: #0d1760;
+  width: fit-content;
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 90px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#meciuri-live,
+#meciuri-viitoare,
+#meciuri-finalizate {
+  height: 120px;
+  width: 250px;
+  background-color: #dfebf3;
+  color: #0d1760;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+
+#meciuri-live:active,
+#meciuri-viitoare:active,
+#meciuri-finalizate:active {
+  background-color: rgb(51, 51, 146);
+  color: white;
+}
+
+#filtre-div {
+  padding-bottom: 50px;
+}
+
+#filtre {
+  background-color: #0d1760;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#calendar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#calendar-text,
+#arhiva-text {
+  color: white;
+  border-bottom: 1px solid white;
+  width: 86%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-bottom: 5px;
+}
+
+#calendar-filtru {
+  background-color: #dfebf3;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  height: 200px;
+  width: 230px;
+  margin-top: 20px;
+  color: #0d1760;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#arhiva {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#arhiva-text {
+}
+
+#arhiva-filtru {
+  background-color: #dfebf3;
+  height: 200px;
+  width: 230px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+input#dataStart,
+input#dataStop,
+#arhiva-filtru > * {
+  cursor: pointer;
+}
+
+#arhiva-filtru > *:active {
+  color: white;
+  background-color: var(--element-hover-background-color);
+}
+
+label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 19px;
+}
+
+#data-start-div {
+  padding-left: 10px;
+}
+
+#data-stop-div {
+  padding-left: 10px;
+}
+
+#filtru-date-div {
+  padding-left: 10px;
+  padding-top: 5px;
+}

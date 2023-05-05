@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div id="body">
+    <div id="titlu">
+        <p id="titlu-text">Conturi creatori de conținut</p>
+    </div>
+    <div id="pag-administrare">
+        <div id="tip-creator-div">
+            <div class="spatiereCustom">
+                <button type="hidden"></button>
+            </div>
+            <div id="tip-creator" *ngFor="let creator of this.creatori; let i = index">
+                <div class="rubrica">
+                    <label for="nume{{i}}">Nume</label>
+                    <input id="nume{{i}}" type="text" value="{{creator.nume}}" disabled>
+                    <label for="numeUtilizator{{i}}">Nume utilizator</label>
+                    <input id="numeUtilizator{{i}}" type="text" value="{{creator.numeUtilizator}}" disabled>
+                    <button class="buton" (click)="sterge(creator.id)">X</button>
+                </div>
+            </div>
+            <div id="tip-creator">
+                <div class="rubrica">
+                    <form class="general" [formGroup]="adaugaForm" (ngSubmit)="adauga()">
+                        <label for="numeAdd">Nume</label>
+                        <input id="numeAdd" type="text" value="" placeholder="Nume" class="ingust"
+                            formControlName="nume">
+
+                        <label for="numeUtilizatorAdd">Utilizator</label>
+                        <input id="numeUtilizatorAdd" type="text" value="" placeholder="Nume de utilizator"
+                            class="ingust" formControlName="numeUtilizator">
+
+                        <label for="parolaAdd">Parola</label>
+                        <input id="parolaAdd" type="password" value="" placeholder="Parola" class="ingust"
+                            formControlName="parolaUtilizator">
+                            
+                        <button id="add" class="buton" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+            <div class="spatiereCustom">
+                <button type="hidden"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-subsol></app-subsol>

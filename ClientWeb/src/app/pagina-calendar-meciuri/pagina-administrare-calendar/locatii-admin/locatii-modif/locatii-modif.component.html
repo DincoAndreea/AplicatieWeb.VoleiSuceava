@@ -1,0 +1,23 @@
+<div id="locatii-modificare-bd">
+    <div id="locatii-modificare-body" *ngFor="let l of locatii">
+        <div id="date-locatii-modificare">
+            <div id="nume-tara-locatii-modificare-div">
+                Țara: <br>
+                <textarea type="text" id="inptxt" [value]="l.judet.tara.tara" #tara></textarea>
+            </div>
+            <div id="nume-judet-locatii-modificare-div">
+                Județ: <br>
+                <textarea type="text" id="inptxt" [value]="l.judet.judet" #judet></textarea>
+            </div>
+            <div id="nume-localitate-locatii-modificare-div">
+                Localitate: <br>
+                <textarea type="text" id="inptxt" [value]="l.localitate" #localitate></textarea>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" id="b-modif" (click)="Modifica(tara.value,judet.value,localitate.value,l.id)">
+            <input type="button" value="Anulare" id="b-anul">
+            <input type="button" value="Șterge" id="b-ster" (click)="Sterge(l)">
+        </div>
+    </div>
+</div>

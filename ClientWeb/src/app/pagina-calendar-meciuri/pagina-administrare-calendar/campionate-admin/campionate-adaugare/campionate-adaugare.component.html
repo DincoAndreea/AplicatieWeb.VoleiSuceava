@@ -1,0 +1,47 @@
+<div id="camp-bd">
+    <div id="campionat-body">
+        <div id="date-echipa">
+            <div id="nume-cam-div">
+                Nume campionat: <br>
+                <textarea type="text" id="inptxt" #nume></textarea>
+            </div>
+            <div id="data-inceput-campionat-adaugare-div">
+                Data început: <br>
+                <input type="date" name="" id="data-inceput-input-campionat-adaugare" #data1>
+            </div>    
+            <div id="data-sfarsit-campionat-adaugare-div">
+                Data sfârșit: <br>
+                <input type="date" name="" id="data-sfarsit-input-campionat-adaugare" #data2>
+            </div>  
+            <div id="locatie-alegere-adaugare">
+                <div id="localitate-div-campionat-adaugare-select">
+                    Locație: <br>
+                    <select name="" id="localitate-campionat-adaugare-select" [size]="locatii.length + 1">
+                        <option [value]="l.id" *ngFor="let l of locatii">{{l.judet.tara.tara}}, {{l.judet.judet}}, {{l.localitate}}</option>
+                        <option value="-1">Fără locație</option>
+                    </select>
+                </div>
+                <div id="locatie-noua-adaugare">
+                    <div id="nume-tara-campionat-adaugare-div">
+                        Locație nouă <br><br>
+                        Țara: <br>
+                        <textarea type="text" id="inptxt"  #tara></textarea>
+                    </div>
+                    <div id="nume-judet-campionat-adaugare-div">
+                        <br><br> Județ: <br>
+                        <textarea type="text" id="inptxt"  #judet></textarea>
+                    </div>
+                    <div id="nume-localitate-campionat-adaugare-div">
+                        <br><br> Localitate: <br>
+                        <textarea type="text" id="inptxt"  #localitate></textarea>
+                    </div>
+                </div>     
+            </div>  
+        </div>
+        <div id="butoane">
+            <input type="button" value="Salvează" id="b-modif" (click)="Adauga(nume.value,tara.value,judet.value,localitate.value)">
+            <input type="button" value="Anulare" id="b-anul">
+        </div>
+    </div>
+</div>
+

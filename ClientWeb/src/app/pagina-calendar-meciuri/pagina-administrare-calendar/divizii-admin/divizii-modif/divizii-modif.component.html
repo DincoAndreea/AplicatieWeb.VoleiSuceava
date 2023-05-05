@@ -1,0 +1,15 @@
+<div id="divi-adaugare-bd">
+    <div id="divizie-adaugare-body" *ngFor="let d of divizii">
+        <div id="date-adaugare-divizie">
+            <div id="nume-divi-adaugare-div">
+                Nume divizie: <br>
+                <textarea type="text" id="inptxt" [value]="d.nume" #nume></textarea>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" id="b-modif" (click)="Modifica(nume.value,d.id)">
+            <input type="button" value="Anulare" id="b-anul">
+            <input type="button" value="Șterge" id="b-ster" (click)="Sterge(d)">
+        </div>
+    </div>
+</div>

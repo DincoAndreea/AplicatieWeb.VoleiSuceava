@@ -1,0 +1,70 @@
+<body id="body-jun">  
+    <div id="lot" *ngFor="let junior of juniori">
+        <div id="caseta-lot">
+            <div id="imagine-cu-titlu">
+                <h2>Lot de jucători</h2>
+                <img [src] = "junior.imagineLot" alt="lot">
+            </div>
+            <div id="incarcare-imag">
+                <div id="lbl-inc">Modifică imaginea(link)</div>
+                <div id="fisdiv">
+                    <textarea rows="7" cols="47" id="imaginelink" name="" #imag1></textarea>
+                </div> 
+            </div>
+            <div id="jucatori">
+                <div id="textarea-lot">
+                    <textarea rows="10" name="" id="info-jucatori-lot" #lot1>
+                        {{junior.lot}}
+                    </textarea>
+                </div>  
+            </div>
+        </div>
+        <div id="informatii">Informații management</div>
+        <div id="caseta-informatii">
+            <div id="text-info">
+                <textarea rows="10" name="" id="info-jucatori" #informatii1>
+                    {{junior.informatii}}
+                </textarea>
+            </div>
+        </div>
+        <div id="premii-text">Premii obținute</div>
+        <div id="premii">
+            <div id="tabel-premii">
+                <table id="tbl-jun">
+                    <tr>
+                        <th>Denumire premiu</th>
+                        <th>Loc în campionat</th>
+                        <th>An de referință</th>
+                        <th>Acțiune</th>
+                    </tr>
+                    <tr *ngFor="let i of junior.premiiJuniori;let j = index">
+                        <td>
+                            <input type="text" name="" id="" [value]="i.denumirePremiu">
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" [value]="i.loc">
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" [value]="i.an">
+                        </td>
+                        <td>
+                            <div id="actiune-div">
+                                <button type="button" name="" class="btn-tabel-del-tr" (click)="deleteRow($event)">Șterge premiu</button>
+                            </div>            
+                        </td>
+                    </tr>   
+                </table>
+            </div>   
+            <div id="buton-tabel">
+                <button type="button" name="" id="btn-tabel-add" (click)="addRow($event)">+</button>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" name="" (click)="Modifica(lot1.value,informatii1.value,imag1.value,$event,junior.id,junior.imagineLot)">
+            <input type="button" value="Anulare">
+            <input type="button" value="Șterge" (click)="Sterge(junior)">
+        </div>
+    </div>
+</body>
+
+

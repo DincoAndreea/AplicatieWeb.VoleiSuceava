@@ -1,0 +1,92 @@
+<app-nav-bar></app-nav-bar>
+<body id="body-adauga">
+    <form action="">
+        <div id="categorii">
+            <label for="cadeti">Cadeti</label>
+            <input (click)="AfisareCadeti()" type="radio" name="categorie" id="cadeti" value="">
+            <label for="juniori">Juniori</label>
+            <input (click)="AfisareJuniori()" type="radio" name="categorie" id="juniori">
+            <label for="sperante">Sperante</label>
+            <input (click)="AfisareSperante()" type="radio" name="categorie" id="sperante">
+            <label for="minivolei">Mini volei</label>
+            <input (click)="AfisareMinivolei()" type="radio" name="categorie" id="minivolei">
+        </div>      
+        <div id="alegere">
+            <label for="adauga">Adaugă</label>
+            <input (click)="AfisareAdauga()" type="radio" name="alege" id="adauga">
+            <label for="modifica">Modifică</label>
+            <input (click)="AfisareModifica()" type="radio" name="alege" id="modifica">
+        </div>  
+        <div id="form-adaugare" *ngIf="afisbtnAdauga">
+            <div id="lot">          
+                <div id="lot-t">Lot de jucători</div>
+                <div id="divtext1">
+                    <div id="incarcare-imag">
+                        <div id="lbl-inc">Încarcă o imagine(link)</div>
+                        <div id="fisdiv">
+                            <textarea id="fisier" name="" id="textarea-imagine" #txtimaginevolei></textarea>
+                        </div> 
+                    </div>
+                    <div id="componenta">
+                        <div id="lbl-lot">Componență lot</div>
+                        <div id="txt-lot">
+                            <textarea name="" id="lot-jucatori" #txtcomponenta></textarea>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+            <div id="informatii">
+                <div id="info-t">Informații management</div>
+                <div id="divtext2">
+                    <textarea name="" id="informatii-text" #txtinfotext></textarea>
+                </div>
+            </div>
+            <div id="premii">
+                <div id="tabel-premii">
+                    <table id="tbl-volei">
+                        <tr>
+                            <th>Denumire premiu</th>
+                            <th>Loc în campionat</th>
+                            <th>An de referință</th>
+                            <th>Acțiune</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="" id="">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="">
+                            </td>
+                            <td>
+                                <button id="sterge-premiu" (click)="deleteRow($event)">Șterge premiu</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>            
+                <div id="buton-tabel">
+                    <button type="button" name="" id="btn-tabel-add" (click)="addRow($event)">+</button>
+                </div>     
+            </div>
+            <div id="butoane">
+                <input type="button" value="Salvare" name="" (click)="Adauga(txtimaginevolei.value,txtcomponenta.value,txtinfotext.value)">
+                <input type="button" value="Anulare">
+            </div>
+        </div> 
+        <div id="form-mod-cad" *ngIf="afisCadeti && afisbtnModifica">
+            <app-cadeti-modif></app-cadeti-modif>
+        </div>
+        <div *ngIf="afisJuniori && afisbtnModifica">
+            <app-juniori-modif></app-juniori-modif>
+        </div>
+        <div *ngIf="afisMinivolei && afisbtnModifica">
+            <app-mini-volei-modif></app-mini-volei-modif>
+        </div>
+        <div *ngIf="afisSperante && afisbtnModifica">
+            <app-sperante-modif></app-sperante-modif>
+        </div>
+    </form>
+</body>
+<app-subsol></app-subsol>

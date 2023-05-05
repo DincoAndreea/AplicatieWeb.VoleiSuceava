@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+
+<div id="body">
+    <div id="fundal">
+        <!-- <div id="live" class="linie dreptunghi" *ngIf="this.meciDetaliat.scor[0]==-1 && this.meciDetaliat.scor[1]==-1">
+         vechiul live
+        </div> -->
+        <div class="linie">
+            <div id="data" class="dreptunghi">
+                <!-- {{this.meciDetaliat.dataMeci}} -->
+                {{this.stringData}}
+            </div>
+            <div id="campionat" class="dreptunghi" *ngIf="this.meciDetaliat.campionat!=null">
+                {{this.meciDetaliat.campionat.denumire}}
+            </div>
+        </div>
+
+        <div class="linie">
+            <div id="logo1">
+                <img src="{{this.meciDetaliat.echipe[0].logo}}" alt="LOGO echipa 1"><!--assets\logo-federatie.png-->
+            </div>
+            <div id="scor" class="dreptunghi" >
+                <div *ngIf="this.meciDetaliat.scor[0]==-1 && this.meciDetaliat.scor[1]==-1">
+                    <a href="{{this.meciDetaliat.link}}">LIVE</a>
+                </div>
+                <div *ngIf="this.meciDetaliat.scor[0]!=-1 && this.meciDetaliat.scor[1]!=-1">
+                    {{this.meciDetaliat.scor[0]}}-{{this.meciDetaliat.scor[1]}}
+                </div>
+            </div>
+            <div id="logo2">
+                <img src="{{this.meciDetaliat.echipe[1].logo}}" alt="LOGO echipa 2">
+            </div>
+        </div>
+        <div class="linie">
+            <div id="echipa1" class="dreptunghi">{{this.meciDetaliat.echipe[0].nume}}</div>
+            <div id="echipa2" class="dreptunghi">{{this.meciDetaliat.echipe[1].nume}}</div>
+        </div>
+        <div id="locatia" class="linie dreptunghi">
+            {{this.meciDetaliat.locatie.localitate}}
+        </div>
+    </div>
+</div>
+
+<app-subsol></app-subsol>

@@ -1,0 +1,213 @@
+<app-nav-bar></app-nav-bar>
+<form class="fundal" [formGroup]="noutateForm" (ngSubmit)="submit()">
+  <div class="coloana marginLeft">
+    <label for="titlu">Titlu</label>
+    <textarea name="" id="titlu" cols="100" rows="1" formControlName="titlu">{{
+      this.noutate.titlu
+    }}</textarea>
+    <label for="descriere">Descriere</label>
+    <textarea
+      name=""
+      id="descriere"
+      cols="100"
+      rows="5"
+      formControlName="descriere"
+      >{{ this.noutate.descriere }}</textarea
+    >
+    <label for="hashtaguri">Hashtaguri</label>
+    <div
+      *ngFor="
+        let hashtag of this.noutate.hashtaguri;
+        let indexOfelement = index
+      "
+    >
+      <input type="text" class="width44rem" value="{{ hashtag }}" disabled />
+      <button
+        type="button"
+        class="x"
+        (click)="stergeHashtagDupaPozitie(indexOfelement)"
+      >
+        X
+      </button>
+    </div>
+    <div>
+      <input
+        type="text"
+        class="width44rem"
+        id="inputTextHashtag"
+        #inputTextHashtag
+        value=""
+      />
+      <button
+        type="button"
+        class="x"
+        (click)="adaugaHashtag(inputTextHashtag.value)"
+        (click)="inputTextHashtag.value = ''"
+      >
+        Add
+      </button>
+    </div>
+    <div>
+      <label for="text">Doar text</label>
+      <input
+        type="radio"
+        id="text"
+        class="marginRight"
+        value="0"
+        name="media"
+        [checked]="this.media == 0"
+        (change)="updateMediaValue(0)"
+      />
+      <label for="imagine">Doar imagini</label>
+      <input
+        type="radio"
+        id="imagine"
+        class="marginRight"
+        value="1"
+        name="media"
+        [checked]="this.media == 1"
+        (change)="updateMediaValue(1)"
+      />
+      <label for="video">Doar video</label>
+      <input
+        type="radio"
+        id="video"
+        class="marginRight"
+        value="2"
+        name="media"
+        [checked]="this.media == 2"
+        (change)="updateMediaValue(2)"
+      />
+    </div>
+
+    <div class="coloana" *ngIf="this.media == 1">
+      <div
+        *ngFor="let imagine of this.noutate.imagini; let indexOfelement = index"
+      >
+        <input type="text" class="width44rem" value="{{ imagine }}" disabled />
+        <button
+          type="button"
+          class="x"
+          (click)="stergeImagineDupaPozitie(indexOfelement)"
+        >
+          X
+        </button>
+      </div>
+      <div>
+        <input
+          type="text"
+          class="width44rem"
+          id="inputTextImagine"
+          #inputTextImagine
+          value=""
+        />
+        <button
+          type="button"
+          class="x"
+          (click)="adaugaImagine(inputTextImagine.value)"
+          (click)="inputTextImagine.value = ''"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <div class="coloana" *ngIf="this.media == 2">
+      <div
+        *ngFor="
+          let video of this.noutate.videoclipuri;
+          let indexOfelement = index
+        "
+      >
+        <input type="text" class="width44rem" value="{{ video }}" disabled />
+        <button
+          type="button"
+          class="x"
+          (click)="stergeVideoDupaPozitie(indexOfelement)"
+        >
+          X
+        </button>
+      </div>
+      <div>
+        <input
+          type="text"
+          class="width44rem"
+          id="inputTextVideo"
+          #inputTextVideo
+          value=""
+        />
+        <button
+          type="button"
+          class="x"
+          (click)="adaugaVideo(inputTextVideo.value)"
+          (click)="inputTextVideo.value = ''"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <label for="draftTrue">Draft</label>
+      <input
+        type="radio"
+        id="draftTrue"
+        name="draft"
+        class="marginRight"
+        [checked]="this.stilPublicare == 0"
+        (change)="updateDraftValue(0)"
+      />
+      <label for="draftFalse">Publicare imediata</label>
+      <input
+        type="radio"
+        id="draftFalse"
+        name="draft"
+        class="marginRight"
+        [checked]="this.stilPublicare == 1"
+        (change)="updateDraftValue(1)"
+      />
+      <label for="programat">Programat</label>
+      <input
+        type="radio"
+        id="programat"
+        name="draft"
+        class="marginRight"
+        [checked]="this.stilPublicare == 2"
+        (change)="updateDraftValue(2)"
+      />
+    </div>
+
+    <div *ngIf="this.stilPublicare != 1">
+      <label for="dataPostare" class="marginRight">Data postării</label>
+      <input
+        type="date"
+        id="dataPostare"
+        value="{{ this.noutate.dataPostare }}"
+        formControlName="dataPostare"
+        (change)="actualizareData()"
+      />
+    </div>
+
+    <div>
+      <button
+        type="button"
+        (click)="delete()"
+        [disabled]="this.noutate.id == -1"
+      >
+        Stergere
+      </button>
+      <button
+        type="submit"
+        [disabled]="
+          !noutateForm.valid ||
+          this.butonBlocatPeData ||
+          this.butonBlocatPeHashtag ||
+          this.butonBlocatPeImagine ||
+          this.butonBlocatPeVideoclip
+        "
+      >
+        Inscrie
+      </button>
+    </div>
+  </div>
+</form>
+<app-subsol></app-subsol>

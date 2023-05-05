@@ -1,0 +1,55 @@
+#body-seniori{
+    background-color: var(--background-content-color);
+    height: 100%;
+    min-width: 700px;
+    width: 100vw;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#titlu{
+    padding-top: 22px;
+    display: flex;
+    justify-content: center;
+    width: 86%;
+}
+
+#titlu-text{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+}
+
+#imagine-seniori{
+    padding-bottom: 50px;
+    width: calc(100vw-210px);
+    padding-top: 50px;
+}
+
+#img-seniori{
+    width: 100%;
+}
+
+#staff-seniori{
+    width: calc(100vw-210px);
+    padding-left: 210px;
+    padding-right: 210px;
+    min-width: fit-content;
+}
+
+#staff{  
+    padding-bottom: 60px;
+}
+

@@ -1,0 +1,29 @@
+.inline{
+    display: flex;
+    flex-direction: row;
+}
+.hashtaguri{
+    padding-right: 10px;
+}
+table{
+    color: var(--white);
+    background-color: var(--background-content-color);
+    min-width: 700px;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+h1, p, img, .video{
+    padding-left: 50px;
+}
+
+.zoom{
+    height: 16rem;
+    transition: 0.5s;
+}
+.transformDinamic{
+    transform: scale(1.5);
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+}

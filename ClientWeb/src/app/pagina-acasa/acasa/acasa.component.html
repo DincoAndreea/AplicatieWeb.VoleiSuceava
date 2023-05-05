@@ -1,0 +1,119 @@
+<app-nav-bar></app-nav-bar>
+<div id="body">
+    <div id="imagine-lot">
+        <img id="img-lot" src="assets\csm_imagine_acasa.jpg" alt="">
+    </div>   
+    <div id="meciuri">
+        <div id="ultimul-meci">
+            <div id="ultimul-meci-text">ULTIMUL MECI</div>
+            <div id="meci-ul">
+                <div id="echipe-ul">
+                    <div id="logo-echipa-csm-ul">
+                        <div id="logo-echipa-csm-ul-div">
+                            <img id="img-csm-ul" [src]="this.mecia.echipa1.logo" alt="">
+                        </div>         
+                        <div id="nume-echipa-ul1">
+                            {{this.mecia.echipa1.nume}}
+                        </div>
+                    </div>
+                    <div id="text-vs-1">
+                        <div id="text-vs-1-div">
+                            VS 
+                        </div>
+                        <div id="scor-meci-ul">
+                            {{this.mecia.scor}}
+                        </div>
+                    </div>
+                    <div id="logo-echipa-extern-ul">
+                        <div id="logo-echipa-extern-ul-div">
+                            <img id="img-extern-ul" [src]="this.mecia.echipa2.logo" alt="">
+                        </div>
+                        <div id="nume-echipa-ul2">
+                            {{this.mecia.echipa2.nume}}
+                        </div>
+                    </div>
+                </div>
+                <div id="info-plus-meci-ul" (click)="accesareMeci(this.mecia.id)">
+                    <a id="link-info-plus-meci-ul">Află mai multe -></a>
+                </div>
+            </div>
+        </div>
+        <div id="clasament">
+            <div id="clasament-text">CLASAMENT</div>
+            <div id="clasament-caseta">
+                <div id="info-clasament">Pentru a vedea clasamentul de pe pagina federației, accesați link-ul de mai jos.</div>
+            <div id="div-link-clasament"><a id="link-clasament" href="https://frvolei.eu/">Clasament -></a></div>
+            </div>    
+        </div>
+        <div id="urmatorul-meci">
+            <div id="urmatorul-meci-text">URMĂTORUL MECI</div>
+            <div id="meci-ur">
+                <div id="echipe-ur" *ngIf="this.meciv.id!=0">
+                    <div id="logo-echipa-csm-ur">
+                        <div id="logo-echipa-csm-ur-div">
+                            <img id="img-csm-ur" [src]="this.meciv.echipa1.logo" alt="">
+                        </div>
+                        <div id="nume-echipa-ur1">
+                            {{this.meciv.echipa1.nume}}
+                        </div>
+                    </div>
+                    <div id="text-vs-2">VS</div>
+                    <div id="logo-echipa-extern-ur">
+                        <div id="logo-echipa-extern-ur-div">
+                            <img id="img-extern-ur" [src]="this.meciv.echipa2.logo" alt="">
+                        </div>
+                        <div id="nume-echipa-ur2">
+                            {{this.meciv.echipa2.nume}}
+                        </div>
+                    </div>
+                </div>
+                <div id="info-plus-meci-ur" (click)="accesareMeci(this.meciv.id)" *ngIf="this.meciv.id!=0">
+                    <a id="link-info-plus-meci-ur" >Află mai multe -></a>
+                </div>
+                <div *ngIf="this.meciv.id==0">
+                    Nu există nici un meci planificat.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="stiri-si-seniori">
+        <div id="seniori">
+            <div id="text-seniori">ÎNTÂLNEȘTE ECHIPA</div>
+            <div id="lot-seniori">
+                <div id="lot-seniori-titlu">SENIORI</div>
+                <div id="lot-seniori-imagine">
+                    <img id="seniori-imagine" [src]="this.seniori.senioriImagine" alt="">
+                </div>
+                <div id="lot-seniori-text">
+                    {{this.seniori.senioriLot}}
+                </div>
+                <div id="div-link-lot-seniori" (click)="getSenioriDetalii()">
+                    <a id="link-lot-seniori">Află mai multe despre echipă -></a>
+                </div>
+            </div>
+        </div>
+        <div id="ultimele-noutati">
+            <div id="ultimele-noutati-text">ULTIMELE NOUTĂȚI</div>
+            <div id="stiri">
+                <div id="stire" *ngFor="let s of stiri">
+                    <div id="data-stire">
+                        {{s.dataPostare | date:'d MMMM y'}}
+                    </div>
+                    <div id="titlu-stire">
+                        {{s.titlu}}
+                    </div>
+                    <div id="citeste-stire" (click)="accesareNoutate($event,s.id)">
+                        <a id="link-citeste-stire">Citește mai mult -></a> <!-- href="http://localhost:4200/noutati/noutateDetailed"-->
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>
+    <div id="sponsori">
+        <div id="sponsori-text">SPONSORI</div>
+        <div id="sponsor" *ngFor="let sponsor of sponsori">
+            <app-sponsor [urlLink]="sponsor.urlLink" [logo]="sponsor.logo" [nume]="sponsor.nume" [editie]="sponsor.editie" ></app-sponsor>
+        </div>
+    </div>
+</div>
+<app-subsol></app-subsol>

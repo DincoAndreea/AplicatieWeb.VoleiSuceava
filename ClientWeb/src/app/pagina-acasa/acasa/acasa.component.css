@@ -1,0 +1,536 @@
+#body {
+  background-color: var(--background-content-color);
+  height: 100%;
+  min-width: 700px;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#imagine-lot {
+}
+
+#img-lot {
+  width: 100%;
+}
+
+#clasament {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+#clasament-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#clasament-caseta {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #dfebf3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#info-clasament {
+  text-align: justify;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 10px;
+}
+
+#div-link-clasament {
+  padding-top: 15px;
+  text-align: end;
+}
+
+#link-clasament {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+}
+#link-clasament:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+#meciuri {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90vw;
+  min-width: 700px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#ultimul-meci {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#ultimul-meci-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#meci-ul {
+  margin-top: 10px;
+  width: 320px;
+  background-color: #dfebf3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /*height: 150px;*/
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#echipe-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* column-gap: 20px; */
+}
+
+#logo-echipa-csm-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  /* border: 1px solid black; */
+}
+
+#logo-echipa-csm-ul-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-csm-ul {
+  height: 80px;
+}
+
+#text-vs-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  align-self: center;
+}
+
+#text-vs-1-div {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#logo-echipa-extern-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  /* border: 1px solid black; */
+}
+
+#logo-echipa-extern-ul-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-extern-ul {
+  height: 80px;
+}
+
+#nume-echipe-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 12px;
+}
+
+#nume-echipa-ul1 {
+  text-align: center;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#nume-echipa-ul2 {
+  text-align: center;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#scor-meci-ul {
+  /* padding: 5px 0px 15px 0px; */
+  font-size: 20px;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 20px;
+}
+
+#info-plus-meci-ul {
+  padding-top: 10px;
+}
+
+#link-info-plus-meci-ul {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+#link-info-plus-meci-ul:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+#urmatorul-meci {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#urmatorul-meci-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#meci-ur {
+  margin-top: 10px;
+  width: 320px;
+  background-color: #dfebf3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /*height: 150px;*/
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#echipe-ur {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* padding-bottom: 10px; */
+}
+
+#logo-echipa-csm-ur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+}
+
+#logo-echipa-csm-ur-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-csm-ur {
+  height: 80px;
+}
+
+#text-vs-2 {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#text-vs-2-div {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#logo-echipa-extern-ur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  /* border: 1px solid black; */
+}
+
+#logo-echipa-extern-ur-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-extern-ur {
+  height: 80px;
+}
+
+#nume-echipe-ur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 40px;
+  padding-bottom: 10px;
+}
+
+#nume-echipa-ur1 {
+  text-align: center;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#nume-echipa-ur2 {
+  text-align: center;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#info-plus-meci-ur {
+  padding-top: 10px;
+}
+
+#link-info-plus-meci-ur {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+#link-info-plus-meci-ur:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+#stiri-si-seniori {
+  padding-top: 100px;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  min-width: 700px;
+  flex-wrap: wrap;
+}
+
+#seniori {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#text-seniori {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#lot-seniori {
+  margin-top: 10px;
+  width: 450px;
+  background-color: #dfebf3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#lot-seniori-titlu {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#lot-seniori-imagine {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#seniori-imagine {
+  width: 100%;
+}
+
+#lot-seniori-text {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  white-space: pre-wrap;
+  align-self: center;
+}
+
+#div-link-lot-seniori {
+  padding-left: 15px;
+  padding-right: 15px;
+  align-self: center;
+  cursor: pointer;
+}
+
+#link-lot-seniori {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#ultimele-noutati {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#ultimele-noutati-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#stiri {
+  margin-top: 10px;
+  width: 450px;
+  background-color: #dfebf3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#stire {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#stire:hover {
+  background-color: var(--element-hover-background-color);
+  transition: all 0.5s;
+}
+
+#data-stire {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#titlu-stire {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#citeste-stire {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  align-self: flex-end;
+}
+
+#link-citeste-stire {
+  color: #0d1760;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: end;
+  cursor: pointer;
+}
+#link-citeste-stire:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+#sponsori {
+  padding-top: 100px;
+  width: 90vw;
+  min-width: 700px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#sponsori-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  width: 86%;
+  padding-bottom: 5px;
+}
+
+#sponsor {
+  padding-top: 20px;
+}

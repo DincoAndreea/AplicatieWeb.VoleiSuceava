@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="personal">
+    <div id="butoane-personal">
+        <div id="antrenori"><button id="btn-antrenori" (click)="afisareAntrenori()">Antrenori</button></div>
+        <div id="jucatori"><button id="btn-jucatori" (click)="afisareJucatori()">Jucători </button></div>
+        <div id="jucatori"><button id="btn-echipe" (click)="afisareEchipe()">Echipe </button></div>
+        <div id="jucatori"><button id="btn-seniori" (click)="afisareSeniori()">Seniori </button></div>
+    </div>
+    <div id="search-bar">
+        <form id="formular">
+            <input type="text" placeholder="Caută după nume, prenume sau nume campionat..." name="search" id="search-b" (keyup)="FiltrareValoare($event)">
+            <div id="bara-search"><button (click)="AfisarePersonalFiltru()" type="button"><i class="fa fa-search"></i></button></div>   
+        </form>  
+    </div>
+    <div id="adaugare-modificare">
+        <label for="adauga">Adaugă</label>
+            <input (click)="AfisareAdauga()" type="radio" name="alege" id="adauga">
+            <label for="modifica">Modifică</label>
+            <input (click)="AfisareModifica()" type="radio" name="alege" id="modifica">
+    </div>
+    <div id="jucatori-component" *ngIf="afisareJuc && afisbtnModifica">
+        <app-jucatori></app-jucatori> 
+    </div>   
+    <div id="antrenori-component" *ngIf="afisareAnt && afisbtnModifica">
+        <app-antrenori></app-antrenori>
+    </div> 
+    <div id="echipe-component" *ngIf="afisareEch && afisbtnModifica">
+        <app-echipe></app-echipe>
+    </div> 
+    <div id="seniori-component" *ngIf="afisareSen">
+        <app-seniori-modif></app-seniori-modif>
+    </div>
+    <div id="adaugare-echipe" *ngIf="afisareEch && afisbtnAdauga">
+        <app-echipe-adaugare></app-echipe-adaugare>
+    </div>
+    <div id="adaugare-antrenori" *ngIf="afisareAnt && afisbtnAdauga">
+        <app-antrenori-adaugare></app-antrenori-adaugare>
+    </div>
+    <div id="adaugare-jucatori" *ngIf="afisareJuc && afisbtnAdauga">
+        <app-jucatori-adaugare></app-jucatori-adaugare>
+    </div>
+    <div></div>
+</div>
+<app-subsol></app-subsol>
+

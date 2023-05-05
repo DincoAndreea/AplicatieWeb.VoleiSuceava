@@ -1,0 +1,22 @@
+<!--<app-nav-bar></app-nav-bar>
+<div id="sponsori">
+    <div id="sponsor" *ngFor="let sponsor of sponsori">
+        <app-sponsor [webPage]="sponsor.webPage" [logo]="sponsor.logo" [nume]="sponsor.nume" [editie]="sponsor.editie" ></app-sponsor>
+    </div>
+</div>
+ <p>De facut paginare</p> 
+<app-subsol></app-subsol>-->
+<app-nav-bar></app-nav-bar>
+<div id="fundal">
+    <div id="spo">
+        <p id="spo-text">SPONSORI</p>
+    </div>
+    <div id="sponsori">
+        <div id="sponsor" *ngFor="let sponsor of sponsori">
+            <app-sponsor [urlLink]="sponsor.urlLink" [logo]="sponsor.logo" [nume]="sponsor.nume"
+                [editie]="sponsor.editie"></app-sponsor>
+        </div>
+    </div>
+    <!--<p>De facut paginare</p>-->
+</div>
+<app-subsol></app-subsol>

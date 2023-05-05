@@ -1,0 +1,32 @@
+<body>  
+    <div id="lot" *ngFor="let cadet of cadeti">
+        <div id="caseta-lot">
+            <div id="imagine-cu-titlu">
+                <h2>Lot de jucători</h2>
+                <img [src] = "cadet.imagineLot" alt="lot">
+            </div>
+            <div id="jucatori">
+                <p>
+                    {{cadet.lot}}
+                </p>
+            </div>
+        </div>
+        <div id="informatii">Informații management</div>
+        <div id="caseta-informatii"><div id="text-info">{{cadet.informatii}}</div></div>
+        <div id="premii">Premii obținute</div>
+        <div id="tabel-premii">
+            <table>
+                <tr>
+                    <th>Denumire premiu</th>
+                    <th>Loc în campionat</th>
+                    <th>An de referință</th>
+                </tr>
+                <tr *ngFor="let i of cadet.premiiCadeti">
+                    <td>{{i.denumirePremiu}}</td>
+                    <td>{{i.loc}}</td>
+                    <td>{{i.an}}</td>
+                </tr>   
+            </table>
+        </div>
+    </div>
+</body>

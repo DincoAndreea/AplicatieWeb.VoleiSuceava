@@ -1,0 +1,130 @@
+/*table{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 700px;
+    background-image: linear-gradient(to right, var(--background-content-color), var(--dark-blue-color));
+}
+
+tr{
+    height: 50px;
+}
+
+td{
+    color: var(--white);
+
+
+    padding-left: 4px;
+    padding-right: 4px; 
+
+}
+
+img{
+    height: 5rem;
+    width: 5rem;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-size: 14px;
+    text-decoration: none;
+
+
+    padding-bottom: 5px;
+    font-family: 'Arial Unicode MS';
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+
+}
+
+h1{
+    font-size: 25px
+}
+
+
+
+
+button{
+    padding: 0;
+    width: fit-content;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 14px;
+    font-family: 'Arial Unicode MS';
+}
+
+
+#dropdown-detalii-club-content{
+    display: none;
+    position: absolute;
+    background-color: #3D4580;
+    min-width: 120px;
+}
+
+#dropdown-detalii-club-content a{
+    float: none;
+    color: rgb(255, 255, 255);
+    padding: auto;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#dropdown-detalii-club:hover #dropdown-detalii-club-content{
+    display: block;
+}
+
+#btndrdw-detalii{
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+#dropdown-detalii-club-content a:hover{
+    background-color: #525ca8;
+}
+
+
+
+
+
+
+
+
+#dropdown-volei-juvenil-content{
+    display: none;
+    position: absolute;
+    background-color: #3D4580;
+    min-width: 120px;
+}
+
+#dropdown-volei-juvenil-content a{
+    float: none;
+    color: rgb(255, 255, 255);
+    padding: auto;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#dropdown-volei-juvenil:hover #dropdown-volei-juvenil-content{
+    display: block;
+}
+
+#btndrdw-volei-juvenil{
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+#dropdown-volei-juvenil-content a:hover{
+    background-color: #525ca8;
+}*/
+
+
+
+div{
+    background-image: linear-gradient(to right, var(--background-content-color), var(--dark-blue-color));
+    min-width: 700px;
+}

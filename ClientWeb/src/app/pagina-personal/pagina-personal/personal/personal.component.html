@@ -1,0 +1,73 @@
+<app-nav-bar></app-nav-bar>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="personal">
+    <div id="butoane-personal">
+        <div id="antrenori"><button id="btn-antrenori" (click)="afisareAntrenori()">Antrenori</button></div>
+        <div id="jucatori"><button id="btn-jucatori" (click)="afisareJucatori()">Jucători </button></div>
+    </div>
+    <div id="search-bar">
+        <form id="formular">
+            <input type="text" placeholder="Caută după nume, prenume sau nume campionat..." name="search" id="search-b" (keyup)="FiltrareValoare($event)">
+            <div id="bara-search"><button (click)="AfisarePersonalFiltru()" type="button"><i class="fa fa-search"></i></button></div>   
+        </form>  
+    </div>
+    <div id="jucatori-component" *ngIf="afisareJuc">
+        <div id="jucator" *ngFor="let jucator of jucatori">
+            <app-jucator [nume]="jucator.nume" [prenume]="jucator.prenume" [nationalitate]="jucator.nationalitate" [dataNasterii]="jucator.dataNasterii" [inaltime]="jucator.inaltime" [post]="jucator.post" [descriere]="jucator.descriere" [linkPoza]="jucator.linkPoza" [premii]="jucator.premii" [roluri]="jucator.roluri"></app-jucator>
+        </div>   
+        <div id="paginare1" *ngIf="afisPag1">
+            <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=4" (click)="PageJuc($event, 0)">|←</button>
+            <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=3" (click)="PageJuc($event, paginaActuala1.numarPagina-3)">{{paginaActuala1.numarPagina-2}}</button>
+            <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=2" (click)="PageJuc($event, paginaActuala1.numarPagina-2)">{{paginaActuala1.numarPagina-1}}</button>
+            <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=1" (click)="PageJuc($event, paginaActuala1.numarPagina-1)">{{paginaActuala1.numarPagina}}</button>
+            <button class="pag1" id="selectedPage1">{{paginaActuala1.numarPagina+1}}</button>
+            <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+1 && this.paginaActuala1.numarPagina+1 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+1)">{{paginaActuala1.numarPagina+2}}</button>
+            <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+2 && this.paginaActuala1.numarPagina+2 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+2)">{{paginaActuala1.numarPagina+3}}</button>
+            <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+3 && this.paginaActuala1.numarPagina+3 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+3)">{{paginaActuala1.numarPagina+4}}</button>
+            <button class="pag1" disabled *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+5">...</button>
+            <button class="pag1" *ngIf="this.totalPagini1!=this.paginaActuala1.numarPagina" (click)="PageJuc($event, totalPagini1)">{{totalPagini1+1}}</button>
+        </div>
+        <div id="paginare3" *ngIf="afisPag3">
+            <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=4" (click)="PageFiltruJuc($event, 0)">|←</button>
+            <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-3)">{{paginaActuala3.numarPagina-2}}</button>
+            <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=2" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-2)">{{paginaActuala3.numarPagina-1}}</button>
+            <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=1" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-1)">{{paginaActuala3.numarPagina}}</button>
+            <button class="pag3" id="selectedPage3">{{paginaActuala3.numarPagina+1}}</button>
+            <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+1 && this.paginaActuala3.numarPagina+1 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+1)">{{paginaActuala3.numarPagina+2}}</button>
+            <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+2 && this.paginaActuala3.numarPagina+2 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+2)">{{paginaActuala3.numarPagina+3}}</button>
+            <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+3 && this.paginaActuala3.numarPagina+3 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+3)">{{paginaActuala3.numarPagina+4}}</button>
+            <button class="pag3" disabled *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+5">...</button>
+            <button class="pag3" *ngIf="this.totalPagini3!=this.paginaActuala3.numarPagina" (click)="PageFiltruJuc($event, totalPagini3)">{{totalPagini3+1}}</button>
+        </div>
+    </div>   
+    <div id="antrenori-component" *ngIf="afisareAnt">
+        <div id="antrenor" *ngFor="let antrenor of antrenori">
+            <app-antrenor [nume]="antrenor.nume" [prenume]="antrenor.prenume" [nationalitate]="antrenor.nationalitate" [dataNasterii]="antrenor.dataNasterii" [inaltime]="antrenor.inaltime" [post]="antrenor.post" [descriere]="antrenor.descriere" [linkPoza]="antrenor.linkPoza" [premii]="antrenor.premii" [roluri]="antrenor.roluri"></app-antrenor>
+        </div>
+        <div id="paginare2" *ngIf="afisPag2">
+            <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=4" (click)="PageAnt($event, 0)">|←</button>
+            <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=3" (click)="PageAnt($event, paginaActuala2.numarPagina-3)">{{paginaActuala2.numarPagina-2}}</button>
+            <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=2" (click)="PageAnt($event, paginaActuala2.numarPagina-2)">{{paginaActuala2.numarPagina-1}}</button>
+            <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=1" (click)="PageAnt($event, paginaActuala2.numarPagina-1)">{{paginaActuala2.numarPagina}}</button>
+            <button class="pag2" id="selectedPage2">{{paginaActuala2.numarPagina+1}}</button>
+            <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+1 && this.paginaActuala2.numarPagina+1 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+1)">{{paginaActuala2.numarPagina+2}}</button>
+            <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+2 && this.paginaActuala2.numarPagina+2 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+2)">{{paginaActuala2.numarPagina+3}}</button>
+            <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+3 && this.paginaActuala2.numarPagina+3 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+3)">{{paginaActuala2.numarPagina+4}}</button>
+            <button class="pag2" disabled *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+5">...</button>
+            <button class="pag2" *ngIf="this.totalPagini2!=this.paginaActuala2.numarPagina" (click)="PageAnt($event, totalPagini2)">{{totalPagini2+1}}</button>
+        </div>
+        <div id="paginare4" *ngIf="afisPag4">
+            <button class="pag4" *ngIf="this.paginaActuala4.numarPagina>=4" (click)="PageFiltruAnt($event, 0)">|←</button>
+            <button class="pag4" *ngIf="this.paginaActuala4.numarPagina>=3" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina-3)">{{paginaActuala4.numarPagina-2}}</button>
+            <button class="pag4" *ngIf="this.paginaActuala4.numarPagina>=2" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina-2)">{{paginaActuala4.numarPagina-1}}</button>
+            <button class="pag4" *ngIf="this.paginaActuala4.numarPagina>=1" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina-1)">{{paginaActuala4.numarPagina}}</button>
+            <button class="pag4" id="selectedPage4">{{paginaActuala4.numarPagina+1}}</button>
+            <button class="pag4" *ngIf="this.totalPagini4>=this.paginaActuala4.numarPagina+1 && this.paginaActuala4.numarPagina+1 != this.totalPagini4" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina+1)">{{paginaActuala4.numarPagina+2}}</button>
+            <button class="pag4" *ngIf="this.totalPagini4>=this.paginaActuala4.numarPagina+2 && this.paginaActuala4.numarPagina+2 != this.totalPagini4" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina+2)">{{paginaActuala4.numarPagina+3}}</button>
+            <button class="pag4" *ngIf="this.totalPagini4>=this.paginaActuala4.numarPagina+3 && this.paginaActuala4.numarPagina+3 != this.totalPagini4" (click)="PageFiltruAnt($event, paginaActuala4.numarPagina+3)">{{paginaActuala4.numarPagina+4}}</button>
+            <button class="pag4" disabled *ngIf="this.totalPagini4>=this.paginaActuala4.numarPagina+5">...</button>
+            <button class="pag4" *ngIf="this.totalPagini4!=this.paginaActuala4.numarPagina" (click)="PageFiltruAnt($event, totalPagini4)">{{totalPagini4+1}}</button>
+        </div>
+    </div> 
+</div>
+<app-subsol></app-subsol>

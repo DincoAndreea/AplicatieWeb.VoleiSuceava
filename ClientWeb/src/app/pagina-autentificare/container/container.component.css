@@ -1,0 +1,78 @@
+body {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    var(--light-blue-color)
+  );
+  display: flex;
+  border: 0;
+  margin-top: 3vw;
+  border-radius: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 45vw;
+  height: 90vh;
+}
+
+table,
+tr {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+
+tr {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+#distantier {
+  margin-top: 10vh;
+}
+
+h1 {
+  margin: 0;
+  margin-top: 10vh;
+  border: 0;
+  padding: 0;
+  color: var(--blue-color);
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  width: 25vw;
+  height: 5vh;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+button {
+  width: 30vw;
+  cursor: pointer;
+}
+
+#info {
+  font-size: 1 rem;
+}
+
+div {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.noMargin {
+  margin-top: -3vw;
+}
+
+.buton:hover {
+  background-color: var(--background-content-color);
+}
+.buton:active {
+  background-color: var(--selected-blue-color);
+}

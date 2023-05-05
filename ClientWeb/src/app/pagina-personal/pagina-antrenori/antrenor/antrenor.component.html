@@ -1,0 +1,53 @@
+<div id="antrenor">
+    <div id="info-jucator">
+        <div id="imagine">
+            <img src="{{linkPoza}}" alt="jucator">
+        </div>
+        <div id="date-personale">
+            <div id="date">
+                <p id="nume">{{nume}} {{prenume}}</p>
+                <p id="nationalitate">{{nationalitate}}</p>
+                <p id="data">{{dataNasterii}}</p>
+                <p id="inaltime">{{inaltime}}</p>
+                <p id="post">{{post}}</p>
+            </div>
+            <div id="descriere">
+                <p>{{descriere}}</p>
+            </div>            
+        </div>
+    </div>
+    <div id="text-roluri-div" *ngIf="this.afis">
+        <div id="text-roluri">Roluri</div>
+    </div>
+    <div id="timeline" *ngFor="let s of roluri | keyvalue">
+        <div id="roluri">
+            <div id="timp">
+                <div id="bulina"> 
+                </div>
+                <div id="timpul">
+                    {{s.key | date: "d MMMM yyyy"}}
+                </div>
+            </div>
+            <div id="rol">
+                {{s.value}}
+            </div>
+        </div>  
+    </div>
+    <div id="text-premii-div" *ngIf="premii.length > 0">
+        <div id="text-premii">Premii</div>
+    </div>
+    <div id="timeline">
+        <div id="roluri" *ngFor="let p of premii">
+            <div id="timp">
+                <div id="bulina"> 
+                </div>
+                <div id="timpul">
+                    {{p.dataAcordare | date: "d MMMM yyyy"}}
+                </div>
+            </div>
+            <div id="rol">
+                {{p.denumire}}
+            </div>
+        </div>  
+    </div>
+</div>

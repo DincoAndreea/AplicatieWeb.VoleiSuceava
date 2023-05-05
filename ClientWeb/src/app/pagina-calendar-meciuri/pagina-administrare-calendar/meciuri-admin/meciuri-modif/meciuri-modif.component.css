@@ -1,0 +1,223 @@
+#meci-modificare-bd {
+}
+
+#meci-modificare-body {
+  background-color: #0d1760;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  row-gap: 30px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#locatii-existente-modificare {
+  display: flex;
+}
+
+#locatii-existente-div-modificare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#locatii-existente-select-modificare {
+  margin-top: 10px;
+}
+
+#date-meci-modificare {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding-top: 50px;
+}
+
+#scor-meci1-modificare-div,
+#scor-meci2-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#inptxt {
+  outline: none;
+  border: 0;
+  margin-top: 5px;
+}
+
+#data-meci-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#data-meci-input-modificare {
+  margin-top: 5px;
+}
+
+#link-meci-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+textarea {
+  margin-top: 5px;
+}
+
+#divizii-meci-modificare-div1,
+#divizii-meci-modificare-div2 {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-divizii-meci-modificare1,
+#select-divizii-meci-modificare2 {
+  margin-top: 5px;
+}
+
+#locatii-div-meci-modificare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+#tara-div-meci-modificare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#tara-input-meci-modificare {
+  margin-top: 5px;
+}
+
+#judet-div-meci-modificare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#judet-input-meci-modificare {
+  margin-top: 5px;
+}
+
+#localitate-div-meci-modificare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#localitate-input-meci-modificare {
+  margin-top: 5px;
+}
+
+#echipa1-meci-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-echipa1-meci-modificare {
+  margin-top: 5px;
+}
+
+#echipa2-meci-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-echipa2-meci-modificare {
+  margin-top: 5px;
+}
+
+#campionat-meci-modificare-div1,
+#campionat-meci-modificare-div2 {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-campionat-meci-modificare1,
+#select-campionat-meci-modificare2 {
+  margin-top: 5px;
+}
+
+#castigator-meci-modificare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-castigator-meci-modificare {
+  margin-top: 5px;
+}
+
+#butoane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#b-modif,
+#b-anul,
+#b-ster,
+#btn-adauga {
+  width: 30%;
+  height: 60px;
+  border-radius: 0;
+  border: 0;
+  background-color: #dfebf3;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+
+#btn-adauga {
+  width: 20%;
+}
+
+#b-modif:active,
+#b-anul:active,
+#b-ster:active,
+#btn-adauga:active {
+  background-color: rgb(38, 38, 159);
+}
+
+#paginare1,
+#paginare2,
+#paginare3,
+#paginare4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  color: var(--white);
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+
+.pag2,
+.pag1,
+.pag3,
+.pag4 {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: white;
+  background-color: inherit;
+  width: 2rem;
+  height: 1.5rem;
+  font-size: 16px;
+}
+
+#selectedPage1,
+#selectedPage2,
+#selectedPage3,
+#selectedPage4 {
+  color: var(--blue-color);
+}

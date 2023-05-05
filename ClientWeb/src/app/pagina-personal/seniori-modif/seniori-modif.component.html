@@ -1,0 +1,20 @@
+<div id="seniori-modif-body">
+    <div id="comp-text">Componență echipă seniori:</div>
+    <div id="jucatori">
+        Jucători:
+        <div id="persoane-juc" *ngFor="let j of jucatori">
+            <label [for]="j.nume+j.prenume">{{j.nume}} {{j.prenume}}</label>
+            <input type="checkbox" name="" [id]="j.nume+j.prenume" [checked]="j.lotSeniori!=null && j.lotSeniori != -1">
+        </div>
+    </div>
+    <div id="antrenori">
+        Antrenori:
+        <div id="persoane-ant" *ngFor="let a of antrenori">
+            <label [for]="a.nume+a.prenume">{{a.nume}} {{a.prenume}}</label>
+            <input type="checkbox" name="" [id]="a.nume+a.prenume" [checked]="a.lotSeniori!=null && a.lotSeniori != -1">
+        </div>
+    </div>  
+    <div id="buton">
+        <input type="button" value="Modifică" (click)="CheckJuc($event);CheckAnt($event)">
+    </div>
+</div>

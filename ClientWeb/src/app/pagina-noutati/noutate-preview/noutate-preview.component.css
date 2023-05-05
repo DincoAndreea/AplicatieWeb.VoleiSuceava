@@ -1,0 +1,35 @@
+table {
+  border: 0;
+  margin: 0;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 1vw;
+  margin-right: 3vw;
+  padding: 0;
+  width: 100%;
+  background-image: var(--imagineFundal);
+}
+td {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 0;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-bottom: 0;
+  width: calc(100% - 45px);
+}
+table:hover {
+  transition: all 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+img {
+  width: 10rem;
+  height: 6rem;
+}
+.click-cursor {
+  cursor: pointer;
+}

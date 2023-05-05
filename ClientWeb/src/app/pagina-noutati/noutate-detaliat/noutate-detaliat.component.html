@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+<table>
+    <tr>
+        <td>
+            <h1>{{this.noutate.titlu}}</h1>
+        </td>
+    </tr>
+    <hr>
+    <tr *ngIf="this.noutate.imagini!=null">
+        <td>
+            <img *ngFor="let imag of this.noutate.imagini" class="zoom" src="{{imag}}" alt="Imagine">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{this.noutate.descriere}}</p>
+        </td>
+    </tr>
+    <tr *ngIf="this.noutate.hashtaguri!=null">
+        <td class="inline">
+            <div *ngFor="let diez of this.noutate.hashtaguri" class="hashtaguri">
+                <p>#{{diez}}</p>
+            </div>
+        </td>
+    </tr>
+    <tr *ngIf="this.noutate.videoclipuri!=null">
+        <td class="video">
+            <iframe width="560" height="315" src="{{this.noutate.videoclipuri}}"
+                title="YouTube video player" alt="Video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <div>
+                Dacă filmul nu se încarcă, apăsați <a href="{{this.noutate.videoclipuri}}">aici</a>!
+            </div>
+        </td>
+    </tr>
+    <!-- <tr>
+        <td>
+            <a href="http://www.facebook.com/sharer.php?u=http://google.com" rel="nofollow noreferrer">facebook.com/sharer.php?u=http://google.com</a>
+            <a href="http://www.facebook.com/sharer.php?u=http://localhost:4200/noutati/noutateDetailed" rel="nofollow noreferrer">LOCAL    </a>
+        </td>
+    </tr> -->
+</table>
+<app-subsol></app-subsol>

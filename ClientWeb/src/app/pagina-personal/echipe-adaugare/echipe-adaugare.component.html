@@ -1,0 +1,30 @@
+<div id="ech-bd">
+    <div id="echipa-body">
+        <div id="imagine-echipa">
+            <div id="modif-img">
+                <div id="text-modif">Adaugă o imagine(link):</div>
+                <div id="textarea-img">
+                    <textarea name="" id="txtimg" cols="30" rows="10" #imagine></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="date-echipa">
+            <div id="nume-ech-div">
+                Nume echipă: <br>
+                <textarea type="text" id="inptxt" #nume></textarea>
+            </div>
+            <div id="csm">
+                <div id="text-csm">Aparține echipa de clubul CSM Suceava?</div>
+                <div id="radio-csm">
+                    <label for="rdDa">Da</label>
+                    <input type="checkbox" name="rd" id="rdDa" #stare>
+                </div>
+            </div>       
+        </div>
+        <div id="butoane">
+            <input type="button" value="Salvează" id="b-modif" (click)="Adauga(imagine.value,nume.value,stare.checked)">
+            <input type="button" value="Anulare" id="b-anul">
+        </div>
+    </div>
+</div>
+

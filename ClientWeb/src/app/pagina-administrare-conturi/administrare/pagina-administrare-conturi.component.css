@@ -1,0 +1,125 @@
+#body {
+  background-color: var(--background-content-color);
+  height: 100%;
+  min-width: 700px;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#titlu {
+  padding-top: 22px;
+  display: flex;
+  justify-content: center;
+  width: 86%;
+}
+
+#titlu-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+}
+
+#pag-administrare {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 90px;
+  width: 86%;
+  min-width: 600px;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#tip-creator-div {
+  padding-bottom: 50px;
+}
+
+#tip-creator {
+  background-color: var(--dark-blue-color);
+  width: fit-content;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.rubrica {
+  display: flex;
+  height: 40px;
+  width: 80vw;
+  background-color: #dfebf3;
+  color: #0d1760;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spatiereCustom {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  background-color: var(--dark-blue-color);
+}
+
+button {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--white);
+  background-color: inherit;
+  width: 2rem;
+  height: 1.5rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+label {
+  font-size: medium;
+  padding: 5px;
+  margin-left: 20px;
+}
+.buton {
+  padding: 5px;
+  margin-left: 20px;
+  background-color: var(--dark-blue-color);
+}
+.buton:hover {
+  background-color: var(--background-content-color);
+}
+.buton:active {
+  background-color: var(--selected-blue-color);
+}
+
+.ingust {
+  width: 100px;
+  background-color: var(--white);
+}
+.ingustRosu {
+  width: 100px;
+  background-color: lightcoral;
+}
+
+#add {
+  width: 50px;
+}

@@ -1,0 +1,80 @@
+<div id="meci-modificare-bd">
+    <div id="meci-modificare-body" *ngFor="let m of meciuri">
+        <div id="date-meci-modificare">
+            <div id="scor-meci1-modificare-div">
+                Scor echipa 1: <br>
+                <input type="number" id="inptxt" [value]="m.scor[0] > 0 ? m.scor[0] : null" #scor1>
+            </div>
+            <div id="scor-meci2-modificare-div">
+                Scor echipa 2: <br>
+                <input type="number" id="inptxt" [value]="m.scor[1] > 0 ? m.scor[1] : null" #scor2>
+            </div>
+            <div id="data-meci-modificare-div">
+                Data meci: <br>
+                <input type="datetime-local" name="" id="data-meci-input-modificare" [value]="m.dataMeci" #data1>
+            </div>    
+            <div id="link-meci-modificare-div">
+                Link meci: <br>
+                <textarea name="" id="" cols="30" rows="10" [value]="m.link" #link></textarea>
+            </div> 
+            <div id="divizii-meci-modificare-div1" *ngIf="m.divizie != null">
+                Divizie: <br>
+                <select name="" id="select-divizii-meci-modificare1" #divizie [size]="divizii.length">
+                    <option [selected]="l.id == m.divizie.id" [value]="l.id" *ngFor="let l of divizii">{{l.nume}}</option>
+                </select>
+            </div> 
+            <div id="locatii-existente-modificare">
+                <div id="locatii-existente-div-modificare">
+                    Locații: <br>
+                    <select name="" id="locatii-existente-select-modificare" [size]="locatii.length">
+                        <option [selected]="l.id == m.locatie.id" [value]="l.id" *ngFor="let l of locatii">{{l.judet.tara.tara}}, {{l.judet.judet}}, {{l.localitate}}</option>
+                    </select>
+                </div>
+            </div>      
+            <div id="echipa1-meci-modificare-div">
+                Echipa 1: <br>
+                <select name="" id="select-echipa1-meci-modificare"  #echipa1 [size]="echipa.length">
+                    <option [selected]="e.id == m.echipe[0].id" [value]="e.nume" *ngFor="let e of echipa">{{e.nume}}</option>
+                </select>
+            </div>
+            <div id="echipa2-meci-modificare-div">
+                Echipa 2: <br>
+                <select name="" id="select-echipa2-meci-modificare"  #echipa2 [size]="echipa.length">
+                    <option [selected]="e.id == m.echipe[1].id" [value]="e.nume" *ngFor="let e of echipa">{{e.nume}}</option>
+                </select>
+            </div>
+            <div id="campionat-meci-modificare-div1" *ngIf="m.campionat != null">
+                Campionat: <br>
+                <select name="" id="select-campionat-meci-modificare1"  #campionat [size]="campionate.length + 1">
+                    <option [selected]="c.id == m.campionat.id" [value]="c.denumire" *ngFor="let c of campionate">{{c.denumire}}</option>
+                    <option value="-1">Amicale</option>
+                </select>
+            </div>
+            <div id="campionat-meci-modificare-div2" *ngIf="m.campionat == null">
+                Campionat: <br>
+                <select name="" id="select-campionat-meci-modificare2"  #campionat [size]="campionate.length + 1">
+                    <option [value]="c.denumire" *ngFor="let c of campionate">{{c.denumire}}</option>
+                    <option selected value="-1">Amicale</option>
+                </select>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" id="b-modif" (click)="Modifica(scor1.valueAsNumber,scor2.valueAsNumber,link.value,m.id,$event)">
+            <input type="button" value="Anulare" id="b-anul">
+            <input type="button" value="Șterge" id="b-ster" (click)="Sterge(m)">
+        </div>
+    </div>
+    <div id="paginare2">
+        <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=4" (click)="PageAnt($event, 0)">|←</button>
+        <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=3" (click)="PageAnt($event, paginaActuala2.numarPagina-3)">{{paginaActuala2.numarPagina-2}}</button>
+        <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=2" (click)="PageAnt($event, paginaActuala2.numarPagina-2)">{{paginaActuala2.numarPagina-1}}</button>
+        <button class="pag2" *ngIf="this.paginaActuala2.numarPagina>=1" (click)="PageAnt($event, paginaActuala2.numarPagina-1)">{{paginaActuala2.numarPagina}}</button>
+        <button class="pag2" id="selectedPage2">{{paginaActuala2.numarPagina+1}}</button>
+        <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+1 && this.paginaActuala2.numarPagina+1 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+1)">{{paginaActuala2.numarPagina+2}}</button>
+        <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+2 && this.paginaActuala2.numarPagina+2 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+2)">{{paginaActuala2.numarPagina+3}}</button>
+        <button class="pag2" *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+3 && this.paginaActuala2.numarPagina+3 != this.totalPagini2" (click)="PageAnt($event, paginaActuala2.numarPagina+3)">{{paginaActuala2.numarPagina+4}}</button>
+        <button class="pag2" disabled *ngIf="this.totalPagini2>=this.paginaActuala2.numarPagina+5">...</button>
+        <button class="pag2" *ngIf="this.totalPagini2!=this.paginaActuala2.numarPagina" (click)="PageAnt($event, totalPagini2)">{{totalPagini2+1}}</button>
+    </div>
+</div>
+

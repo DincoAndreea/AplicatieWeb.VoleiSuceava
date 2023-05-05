@@ -1,0 +1,24 @@
+<div id="navbar">
+    <div id="acasa"><a [routerLink]="['/acasa']" id="pagina" (click)="this.actualizareAutentificare('acasa')">Acasă</a></div> 
+    <div id="dropdown-detalii-club">
+        <button id="dropbtn-detalii" (click)="this.actualizareAutentificare('')">Detalii club</button>
+        <div id="dropdown-detalii-club-content">
+            <a [routerLink]="['/viziune']" id="optiuni" (click)="this.actualizareAutentificare('viziune')">Viziune</a>
+            <a [routerLink]="['/istoric']" id="optiuni" (click)="this.actualizareAutentificare('istoric')">Istoric</a>
+            <a [routerLink]="['/trofee']" id="optiuni" (click)="this.actualizareAutentificare('trofee')">Trofee</a>
+        </div>
+    </div>
+    <div id="calendarMeciuri"><a [routerLink]="['/calendar']" id="pagina" (click)="this.actualizareAutentificare('calendar')">Calendar meciuri</a></div> 
+    <div id="noutati"><a [routerLink]="['/noutati']" id="pagina" (click)="this.actualizareAutentificare('noutati')">Noutăți</a></div> 
+    <div id="personal"><a [routerLink]="['/personal']" id="pagina" (click)="this.actualizareAutentificare('personal')">Personal</a></div>
+    <div id="sponsori"><a [routerLink]="['/sponsori']" id="pagina" (click)="this.actualizareAutentificare('sponsori')">Sponsori</a></div>
+    <div id="dropdown-volei-juvenil">
+        <button id="dropbtn-volei" (click)="this.actualizareAutentificare('')">Volei juvenil</button>
+        <div id="dropdown-volei-juvenil-content">
+            <a [routerLink]="['/cadeti']" id="optiuni" (click)="this.actualizareAutentificare('cadeti')">Cadeti</a>
+            <a [routerLink]="['/juniori']" id="optiuni" (click)="this.actualizareAutentificare('juniori')">Juniori</a>
+            <a [routerLink]="['/sperante']" id="optiuni" (click)="this.actualizareAutentificare('sperante')">Sperante</a>
+            <a [routerLink]="['/minivolei']" id="optiuni" (click)="this.actualizareAutentificare('minivolei')">Mini volei</a>
+        </div>
+    </div>
+</div>

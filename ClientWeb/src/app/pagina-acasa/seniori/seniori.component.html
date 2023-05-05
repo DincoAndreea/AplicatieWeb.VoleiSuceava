@@ -1,0 +1,16 @@
+<app-nav-bar></app-nav-bar>
+<div id="body-seniori">
+    <div id="titlu"><p id="titlu-text">SENIORI</p></div>
+    <div id="imagine-seniori">
+        <img id="img-seniori" [src]="this.seniori.senioriImagine" alt="">
+    </div>
+    <div id="detalii">
+        {{this.seniori.senioriDetalii}}
+    </div>
+    <div id="staff-seniori">
+        <div id="staff" *ngFor="let s of this.seniori.senioriLista">
+            <app-jucator [nume]="s.nume" [prenume]="s.prenume" [nationalitate]="s.nationalitate" [dataNasterii]="s.dataNasterii" [inaltime]="s.inaltime" [post]="s.post" [descriere]="s.descriere" [linkPoza]="s.linkPoza" [premii]="s.premii" [roluri]="s.roluri"></app-jucator>
+        </div>
+    </div>  
+</div>
+<app-subsol></app-subsol>

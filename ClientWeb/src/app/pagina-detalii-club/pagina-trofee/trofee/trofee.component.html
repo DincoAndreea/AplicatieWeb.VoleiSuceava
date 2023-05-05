@@ -1,0 +1,21 @@
+<app-nav-bar></app-nav-bar>
+<div id="trofee-background">
+    <div id="titlu"><h1>TROFEE</h1></div>
+    <div id="text"><p>{{this.trof.descriere}}</p></div>
+    <div id="imagine"><img [src]="this.trof.imagine" alt="Volei"></div>
+    <div id="tabel-premii">
+        <table>
+            <tr>
+                <th>Denumire trofeu</th>
+                <th>Dată acordare</th>
+                <th>Campionat</th>
+            </tr>
+            <tr *ngFor="let i of trofee">
+                <td>{{i.denumire}}</td>
+                <td>{{i.dataAcordare | date:'d MMMM y'}}</td>
+                <td>{{i.campionat.denumire}}</td>
+            </tr>   
+        </table>
+    </div>
+</div>
+<app-subsol></app-subsol>

@@ -1,0 +1,52 @@
+#noutati {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*width: calc(100vw - 17px);*/
+  width: 100vw;
+  color: var(--white);
+  background-color: var(--background-content-color);
+  min-height: calc(60vh - 40px);
+  min-width: 700px;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* min-height: 200px; */
+}
+#noutate {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: 250px;
+}
+#paginare {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100vw - 17px);
+  color: var(--white);
+  background-color: var(--background-content-color);
+  min-width: 700px;
+  padding-bottom: 10px;
+}
+button {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--white);
+  background-color: inherit;
+  width: 2rem;
+  height: 1.5rem;
+  font-size: 16px;
+}
+.selectedPage {
+  color: var(--blue-color);
+}
+#paginare > button {
+  cursor: pointer;
+}

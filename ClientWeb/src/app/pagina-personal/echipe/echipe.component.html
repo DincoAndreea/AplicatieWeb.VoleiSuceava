@@ -1,0 +1,34 @@
+<div id="ech-bd">
+    <div id="echipa-body" *ngFor="let e of echipa">
+        <div id="imagine-echipa">
+            <div id="img-ech-div">
+                <img [src]="e.logo" alt="" id="img">
+            </div>
+            <div id="modif-img">
+                <div id="text-modif">Modifică imaginea(link):</div>
+                <div id="textarea-img">
+                    <textarea name="" id="txtimg" cols="30" rows="10" #imagine></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="date-echipa">
+            <div id="nume-ech-div">
+                Nume echipă: <br>
+                <textarea type="text" id="inptxt" [value]="e.nume" #nume></textarea>
+            </div>
+            <div id="csm">
+                <div id="text-csm">Aparține echipa de clubul CSM Suceava?</div>
+                <div id="radio-csm">
+                    <label for="rdDa">Da</label>
+                    <input type="checkbox" name="rd" id="rdDa" [checked]="e.csm" #stare>
+                </div>
+            </div>       
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" id="b-modif" (click)="Modifica(imagine.value,nume.value,stare.checked,e.id,e.logo)">
+            <input type="button" value="Anulare" id="b-anul">
+            <input type="button" value="Șterge" id="b-ster" (click)="Sterge(e)">
+        </div>
+    </div>
+</div>
+

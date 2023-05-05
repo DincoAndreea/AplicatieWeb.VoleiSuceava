@@ -1,0 +1,81 @@
+<app-nav-bar></app-nav-bar>
+
+<div id="body">
+    <div id="titlu">
+        <p id="titlu-text">MECIURI</p>
+    </div>
+    <div id="pag-calendar">
+        <div *ngIf="this.meciPrevizualizarePaginat.meciuri.length>=1">
+            <div id="tip-meci-div">
+                <div class="spatiereCustom">
+                    <button type="hidden"></button>
+                </div>
+                <div id="tip-meci" *ngFor="let meci of this.meciPrevizualizarePaginat.meciuri">
+                    <div class="rubrica" (click)="this.acceseazaMeci(meci.id)">
+                        <div class="coloana padlr10">
+                            {{meci.dataMeci}} la ora {{meci.oraMeci}}
+                        </div>
+                        <div class="coloana padlr10 flexStart">
+                            <span>
+                                <img src="{{meci.echipa1.logo}}" alt="*">
+                                <span>
+                                    {{meci.echipa1.nume}}
+                                </span>
+                            </span>
+                            <span>
+                                <img src="{{meci.echipa2.logo}}" alt="*">
+                                <span>
+                                    {{meci.echipa2.nume}}
+                                </span>
+                            </span>
+                        </div>
+                        <div class="coloana flexStart padlr10">
+                            <div>
+                                {{(meci.scor||" - ").split('-')[0]}}
+                            </div>
+                            <div>
+                                {{(meci.scor||" - ").split('-')[1]}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spatiereCustom">
+                    <button type="hidden"></button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="this.meciPrevizualizarePaginat.meciuri.length==0">
+            <div id="tip-meci-div">
+                <div id="tip-meci">
+                    <div class="rubrica" (click)="this.inapoi()">Nu este nici un meci...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="paginare">
+        <button *ngIf="this.paginaActuala.numarPagina>=4" (click)="goToPage($event, 0)">|←</button>
+        <button *ngIf="this.paginaActuala.numarPagina>=3"
+            (click)="goToPage($event, paginaActuala.numarPagina-3)">{{paginaActuala.numarPagina-2}}</button>
+        <button *ngIf="this.paginaActuala.numarPagina>=2"
+            (click)="goToPage($event, paginaActuala.numarPagina-2)">{{paginaActuala.numarPagina-1}}</button>
+        <button *ngIf="this.paginaActuala.numarPagina>=1"
+            (click)="goToPage($event, paginaActuala.numarPagina-1)">{{paginaActuala.numarPagina}}</button>
+        <button class="selectedPage">{{this.paginaActuala.numarPagina+1}}</button>
+        <button
+            *ngIf="this.meciPrevizualizarePaginat.numarPagini>=this.paginaActuala.numarPagina+1 && this.paginaActuala.numarPagina+1 != this.meciPrevizualizarePaginat.numarPagini"
+            (click)="goToPage($event, this.paginaActuala.numarPagina+1)">{{this.paginaActuala.numarPagina+2}}</button>
+        <button
+            *ngIf="this.meciPrevizualizarePaginat.numarPagini>=this.paginaActuala.numarPagina+2 && this.paginaActuala.numarPagina+2 != this.meciPrevizualizarePaginat.numarPagini"
+            (click)="goToPage($event, this.paginaActuala.numarPagina+2)">{{this.paginaActuala.numarPagina+3}}</button>
+        <button
+            *ngIf="this.meciPrevizualizarePaginat.numarPagini>=this.paginaActuala.numarPagina+3 && this.paginaActuala.numarPagina+3 != this.meciPrevizualizarePaginat.numarPagini"
+            (click)="goToPage($event, this.paginaActuala.numarPagina+3)">{{this.paginaActuala.numarPagina+4}}</button>
+        <button disabled
+            *ngIf="this.meciPrevizualizarePaginat.numarPagini>=this.paginaActuala.numarPagina+5">...</button><!--daca sunt 4 elemente sa apara ...-->
+        <button *ngIf="this.meciPrevizualizarePaginat.numarPagini!=this.paginaActuala.numarPagina"
+            (click)="goToPage($event, this.meciPrevizualizarePaginat.numarPagini)">{{this.meciPrevizualizarePaginat.numarPagini+1}}</button><!--daca e doar o pagina, asta dispare-->
+    </div>
+</div>
+
+<app-subsol></app-subsol>

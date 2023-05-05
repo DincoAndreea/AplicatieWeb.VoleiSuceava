@@ -1,0 +1,113 @@
+<div id="jucator-comp-admin">
+    <div id="jucator" *ngFor="let j of jucatori;let i = index">
+        <div id="info-jucator">
+            <div id="imagine">
+                <img [src]="j.linkPoza" alt="jucator">
+                Modifică imaginea(link):<textarea name="" id="" cols="30" rows="15" #imagine1></textarea>
+            </div>
+            <div id="date-personale">
+                <div id="date">
+                    Nume:<textarea type="text" name="" id="" [value]="j.nume" #nume1></textarea>
+                    Prenume:<textarea type="text" name="" id="" [value]="j.prenume" #prenume1></textarea>
+                    Naționalitate:<textarea type="text" name="" id="" [value]="j.nationalitate" #nationalitate1></textarea>
+                    Data nașterii(în format dd/mm/aaaa):<input type="text" name="" id="" [value]="j.dataNasterii" #dataN1>
+                    Înălțime:<input type="number" name="" id="" [value]="j.inaltime" #inaltime1>
+                    Post:<input type="text" name="" id="" [value]="j.post" #post1>
+                    Echipă:<select name="echipe" id="echipe-select-juc" [size]="echipa.length">
+                        <option [selected]="j.echipa.nume == e.nume" [value]="e.nume" *ngFor="let e of echipa">{{e.nume}}</option>
+                    </select>
+                </div>
+                <div id="descriere">
+                    Descriere:<textarea name="" id="textarea-descriere" cols="30" rows="10" [value]="j.descriere" #descriere1></textarea>
+                </div>            
+            </div>
+        </div>
+        <div id="text-roluri-div">
+            <div id="text-roluri">Roluri</div>
+        </div>
+        <div id="timeline-body-rol-jucatori">
+            <div id="timeline-juc1" >
+                <table id="table-rol-jucatori-admin">
+                    <tr>
+                        <th>Dată</th>
+                        <th>Rol</th>
+                        <th>Acțiune</th>
+                    </tr>
+                    <tr *ngFor="let r of j.roluri | keyvalue">
+                        <td>
+                            <input type="date" name="" id="" [value]="r.key">
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="10" [value]="r.value"></textarea>
+                        </td>
+                        <td>
+                            <input type="button" value="Șterge rol" id="btn-sterge" (click)="StergeRol($event)">
+                        </td>
+                    </tr>
+                </table>      
+            </div>  
+        </div>
+        <div id="buton-adaugare-rol">
+            <input type="button" value="Adaugă rol" id="btn-adauga-rol" (click)="AdaugaRol($event)">
+        </div>
+        <div id="text-premii-div">
+            <div id="text-premii">Premii</div>
+        </div>
+        <div id="timeline-body-premiu-jucatori">
+            <div id="timeline-pre">
+                <table id="table-premiu-jucatori-admin">
+                    <tr>
+                        <th>Dată</th>
+                        <th>Premiu</th>
+                        <th>Acțiune</th>
+                    </tr>
+                    <tr *ngFor="let p of j.premii">
+                        <td>
+                            <input type="date" name="" id="" [value]="p.dataAcordare">
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="10" [value]="p.denumire"></textarea>
+                        </td>
+                        <td>
+                            <input type="button" value="Șterge premiu" id="btn-sterge" (click)="StergeRol($event)">
+                        </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>      
+        <div id="buton-adaugare-premiu">
+            <input type="button" value="Adaugă premiu" id="btn-adauga-premiu" (click)="AdaugaPremiu($event)">
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" name="" (click)="Modifica(imagine1.value,nume1.value,prenume1.value,nationalitate1.value,dataN1.value,inaltime1.valueAsNumber,post1.value,descriere1.value,j.id,$event,j.lotSeniori,j.linkPoza)">
+            <input type="button" value="Anulare">
+            <input type="button" value="Șterge" (click)="Sterge(j)">
+        </div>
+    </div>  
+    <div id="paginare1" *ngIf="afisPag1">
+        <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=4" (click)="PageJuc($event, 0)">|←</button>
+        <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=3" (click)="PageJuc($event, paginaActuala1.numarPagina-3)">{{paginaActuala1.numarPagina-2}}</button>
+        <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=2" (click)="PageJuc($event, paginaActuala1.numarPagina-2)">{{paginaActuala1.numarPagina-1}}</button>
+        <button class="pag1" *ngIf="this.paginaActuala1.numarPagina>=1" (click)="PageJuc($event, paginaActuala1.numarPagina-1)">{{paginaActuala1.numarPagina}}</button>
+        <button class="pag1" id="selectedPage1">{{paginaActuala1.numarPagina+1}}</button>
+        <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+1 && this.paginaActuala1.numarPagina+1 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+1)">{{paginaActuala1.numarPagina+2}}</button>
+        <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+2 && this.paginaActuala1.numarPagina+2 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+2)">{{paginaActuala1.numarPagina+3}}</button>
+        <button class="pag1" *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+3 && this.paginaActuala1.numarPagina+3 != this.totalPagini1" (click)="PageJuc($event, paginaActuala1.numarPagina+3)">{{paginaActuala1.numarPagina+4}}</button>
+        <button class="pag1" disabled *ngIf="this.totalPagini1>=this.paginaActuala1.numarPagina+5">...</button>
+        <button class="pag1" *ngIf="this.totalPagini1!=this.paginaActuala1.numarPagina" (click)="PageJuc($event, totalPagini1)">{{totalPagini1+1}}</button>
+    </div>
+    <div id="paginare3" *ngIf="afisPag3">
+        <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=4" (click)="PageFiltruJuc($event, 0)">|←</button>
+        <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-3)">{{paginaActuala3.numarPagina-2}}</button>
+        <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=2" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-2)">{{paginaActuala3.numarPagina-1}}</button>
+        <button class="pag3" *ngIf="this.paginaActuala3.numarPagina>=1" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina-1)">{{paginaActuala3.numarPagina}}</button>
+        <button class="pag3" id="selectedPage3">{{paginaActuala3.numarPagina+1}}</button>
+        <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+1 && this.paginaActuala3.numarPagina+1 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+1)">{{paginaActuala3.numarPagina+2}}</button>
+        <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+2 && this.paginaActuala3.numarPagina+2 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+2)">{{paginaActuala3.numarPagina+3}}</button>
+        <button class="pag3" *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+3 && this.paginaActuala3.numarPagina+3 != this.totalPagini3" (click)="PageFiltruJuc($event, paginaActuala3.numarPagina+3)">{{paginaActuala3.numarPagina+4}}</button>
+        <button class="pag3" disabled *ngIf="this.totalPagini3>=this.paginaActuala3.numarPagina+5">...</button>
+        <button class="pag3" *ngIf="this.totalPagini3!=this.paginaActuala3.numarPagina" (click)="PageFiltruJuc($event, totalPagini3)">{{totalPagini3+1}}</button>
+    </div>
+</div>
+
+

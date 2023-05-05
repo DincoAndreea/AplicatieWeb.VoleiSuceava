@@ -1,0 +1,67 @@
+<!--<table>
+    <tr *ngIf="this.currentRoute!='/sponsori'">
+        <td *ngFor="let logoSponsor of this.logo">
+            <img src="{{logoSponsor}}" alt="Imagine cu sponsori">
+        </td>
+        <td>
+            <img id="Imagine" src="assets\logo-federatie.png" alt="Imagine federatie">
+
+        </td>
+        <td>
+            <img id="Imagine" src="assets\lpsSuceava.png" alt="Imagine federatie">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <h1 class="underline">
+                CONTACT
+            </h1>
+        </td>
+        <td colspan="4">
+            <h2>
+                ____URMĂREȘTE VOLEI CSM SUCEAVA____
+            </h2>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <p>
+                CLUBUL SPORTIV MUNICIPAL SUCEAVA</p>
+            <p>Bulevardul 1 Decembrie 1918 nr. 7</p>
+            <p>Suceava, România</p>
+            <p> Telefon/Fax:</p>
+            <p>E-mail:</p>
+        </td>
+        <td colspan="4">
+            <p>Acesta este site-ul oficial al echipei de volei masculin CSM Suceava.</p>
+            <p>Toate drepturile sunt rezervate</p>
+        </td>
+    </tr>
+</table>-->
+<div id="fundal">
+    <div id="imagini-sponsori" *ngIf="(this.currentRoute!='/sponsori') && (this.currentRoute!='/acasa') && (this.currentRoute!='/')">
+        <div *ngFor="let logoSponsor of this.logo" id="imgs">
+            <img src="{{logoSponsor}}" alt="Imagine cu sponsori">
+        </div>
+    </div>
+    <div id="contact">
+        <div id="info">
+            <div id="text-contact">CONTACT</div> 
+            <p class="t">CLUBUL SPORTIV MUNICIPAL SUCEAVA</p>
+            <p class="t">Bulevardul 1 Decembrie 1918 nr.7</p>
+            <p class="t">Suceava, România</p>
+            <p class="t">Telefon/Fax:</p>
+            <p class="t">E-mail:</p>
+        </div>
+        <div id="social">
+            <div id="urm">URMĂREȘTE VOLEI CSM SUCEAVA</div>
+            <div id="iconite">
+                <a href="{{link}}">
+                    <img src="assets\pngwing.com.png" alt="" class="soc">
+                </a>
+            </div> 
+            <p class="o">Acesta este site-ul oficial al echipei de volei masculin CSM Suceava.</p>
+            <p class="o">Toate drepturile sunt rezervate.</p>
+        </div>
+    </div>
+</div>

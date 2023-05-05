@@ -1,0 +1,70 @@
+#seniori-modif-body {
+  background-color: #0d1760;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#comp-text {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  padding-top: 25px;
+  padding-bottom: 3px;
+  width: 40%;
+  margin-left: 25px;
+  text-align: start;
+  border-bottom: 1px solid white;
+}
+
+#jucatori {
+  padding: 25px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+#persoane-juc {
+}
+
+#antrenori {
+  padding: 25px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+#persoane-ant {
+}
+
+#buton {
+  padding: 25px;
+}
+
+input[type="button"] {
+  width: 30%;
+  height: 60px;
+  border-radius: 0;
+  border: 0;
+  background-color: #dfebf3;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+
+input[type="button"]:active {
+  background-color: rgb(38, 38, 159);
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+label {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+}

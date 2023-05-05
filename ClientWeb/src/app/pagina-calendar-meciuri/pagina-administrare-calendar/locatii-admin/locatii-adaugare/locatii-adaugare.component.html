@@ -1,0 +1,22 @@
+<div id="locatii-adaugare-bd">
+    <div id="locatii-adaugare-body">
+        <div id="date-locatii-adaugare">
+            <div id="nume-tara-locatii-adaugare-div">
+                Țara: <br>
+                <textarea type="text" id="inptxt" #tara></textarea>
+            </div>
+            <div id="nume-judet-locatii-adaugare-div">
+                Județ: <br>
+                <textarea type="text" id="inptxt" #judet></textarea>
+            </div>
+            <div id="nume-localitate-locatii-adaugare-div">
+                Localitate: <br>
+                <textarea type="text" id="inptxt" #localitate></textarea>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Salvează" id="b-modif" (click)="Adauga(tara.value,judet.value,localitate.value)">
+            <input type="button" value="Anulare" id="b-anul">
+        </div>
+    </div>
+</div>

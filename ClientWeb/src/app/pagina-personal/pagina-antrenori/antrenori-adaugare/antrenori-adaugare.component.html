@@ -1,0 +1,65 @@
+<div id="jucator-comp-admin">
+    <div id="jucator">
+        <div id="info-jucator">
+            <div id="imagine">
+                Adaugă o imagine(link):<textarea name="" id="" cols="30" rows="15" #imagine1></textarea>
+            </div>
+            <div id="date-personale">
+                <div id="date">
+                    Nume:<textarea type="text" name="" id="" #nume1></textarea>
+                    Prenume:<textarea type="text" name="" id="" #prenume1></textarea>
+                    Naționalitate:<textarea type="text" name="" id="" #nationalitate1></textarea>
+                    Data nașterii(în format dd/mm/aaaa):<input type="text" name="" id="" #dataN1>
+                    Înălțime:<input type="number" name="" id="" #inaltime1>
+                    Post:<input type="text" name="" id="" #post1>
+                    Echipă:<select name="echipe" id="echipe-select-juc" [size]="echipa.length">
+                        <option [value]="e.nume" *ngFor="let e of echipa">{{e.nume}}</option>
+                    </select>
+                </div>
+                <div id="descriere">
+                    Descriere:<textarea name="" id="textarea-descriere" cols="30" rows="10" #descriere1></textarea>
+                </div>            
+            </div>
+        </div>
+        <div id="text-roluri-div">
+            <div id="text-roluri">Roluri</div>
+        </div>
+        <div id="timeline-body-rol-jucatori">
+            <div id="timeline-juc1" >
+                <table id="table-rol-jucatori-admin">
+                    <tr>
+                        <th>Dată</th>
+                        <th>Rol</th>
+                        <th>Acțiune</th>
+                    </tr>
+                </table>      
+            </div>  
+        </div>
+        <div id="buton-adaugare-rol">
+            <input type="button" value="Adaugă rol" id="btn-adauga-rol" (click)="AdaugaRol($event)">
+        </div>
+        <div id="text-premii-div">
+            <div id="text-premii">Premii</div>
+        </div>
+        <div id="timeline-body-premiu-jucatori">
+            <div id="timeline-pre">
+                <table id="table-premiu-jucatori-admin">
+                    <tr>
+                        <th>Dată</th>
+                        <th>Premiu</th>
+                        <th>Acțiune</th>
+                    </tr>
+                </table> 
+            </div>
+        </div>      
+        <div id="buton-adaugare-premiu">
+            <input type="button" value="Adaugă premiu" id="btn-adauga-premiu" (click)="AdaugaPremiu($event)">
+        </div>
+        <div id="butoane">
+            <input type="button" value="Salvează" name="" (click)="Adauga(imagine1.value,nume1.value,prenume1.value,nationalitate1.value,dataN1.value,inaltime1.valueAsNumber,post1.value,descriere1.value,$event)">
+            <input type="button" value="Anulare">
+        </div>
+    </div>  
+</div>
+
+

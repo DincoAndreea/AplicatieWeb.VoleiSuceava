@@ -1,0 +1,144 @@
+.fundal {
+  color: var(--white);
+  background-color: var(--background-content-color);
+  min-width: 700px;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.linie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+.centrat {
+  justify-content: center;
+}
+.minsize {
+  min-width: 200px;
+}
+.subliniat {
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-decoration-color: var(--blue-color);
+  text-decoration-thickness: 2px;
+}
+.subliniat:hover {
+  color: var(--light-blue-color);
+}
+.radioButton {
+  margin: 0;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+}
+
+.radio2 {
+  display: flex;
+  flex-direction: column;
+}
+[type="radio"],
+[type="date"] {
+  cursor: pointer;
+}
+
+h1 {
+  margin-left: 1rem;
+}
+.customh1 {
+  font-size: large;
+}
+.customh2 {
+  font-size: medium;
+  margin-left: 1rem;
+}
+.spatiere {
+  margin: 2rem;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  margin-left: 1rem;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background-content-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin: 0;
+  margin-left: 1rem;
+  padding: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  width: 10rem;
+  height: auto;
+  color: var(--white);
+  padding: 6px 6px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {
+  background-color: var(--dark-blue-color);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: var(--dark-blue-color);
+}
+
+button {
+  width: 8rem;
+  height: 2rem;
+  color: var(--white);
+  background-color: var(--blue-color);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+.pag {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--white);
+  background-color: inherit;
+  width: 2rem;
+  height: 1.5rem;
+  font-size: 16px;
+}
+.selectedPage {
+  color: var(--blue-color);
+}
+
+.butonStire:active {
+  background-color: var(--dark-blue-color);
+}
+
+.selectedButton {
+  background-color: var(--selected-blue-color);
+}

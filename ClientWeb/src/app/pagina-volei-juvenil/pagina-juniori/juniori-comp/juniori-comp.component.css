@@ -1,0 +1,136 @@
+body{
+    background-color: #7A80A5;
+    min-width: 700px;
+    width: 100vw;
+    height: 100%;
+    margin: 0; 
+    padding: 0;  
+    border: 0;
+    
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+#lot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    row-gap: 50px;
+    width: calc(100vw-50px);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+#caseta-lot{
+    background-color: #DFEBF3;
+    display: flex;
+    width: 70%;
+    height: fit-content;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#imagine-cu-titlu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    color: #262F6C;
+}
+
+#jucatori{
+    padding-top: 50px;
+    padding-right: 30px;
+}
+
+#informatii{
+    width: 70%;
+    height: 60px;
+    background-color: #DFEBF3;
+    color: #262F6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#caseta-informatii{
+    margin: -30px 0px 0px 0px;
+    width: 70%;
+    height: fit-content;
+    background-color: white;
+    color: #262F6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-word;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#text-info{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+#premii{
+    width: 70%;
+    height: 60px;
+    background-color: #DFEBF3;
+    color: #262F6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#tabel-premii{
+    margin: -30px 0px 0px 0px;
+    width: 70%;
+    height: fit-content;
+    color: #262F6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+p{
+    white-space: pre-line;
+    color: #262F6C;
+}
+
+table{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+td{
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #262F6C;
+}
+
+th{
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #262F6C;
+    background-color: #DFEBF3;
+}
+

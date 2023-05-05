@@ -1,0 +1,98 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="fundal">
+    <div class="linie">
+        <div class="radio">
+            <div>
+                <input type="radio" id="publicat" class="radioButton" name="radioButton" value="0" (change)="filtrulStare($event)" checked>
+                <label for="publicat"> Publicat</label>
+            </div>
+            <div>
+                <input type="radio" id="programat" class="radioButton" name="radioButton" value="1" (change)="filtrulStare($event)">
+                <label for="programat">Programat</label>
+            </div>
+            <div>
+                <input type="radio" id="draft" class="radioButton" name="radioButton" value="2" (change)="filtrulStare($event)">
+                <label for="draft">Draft</label>
+            </div>
+        </div>
+        <div>
+            <button class="butonStire" (click)="onButtonClick()">Știre nouă</button>
+        </div>
+    </div>
+    <div class="linie">
+        <div>
+            <h1>Filtrare</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Tip știre</button>
+                <div class="dropdown-content">
+                    <button (click)="filtrulMedia($event)" value="i" class="selectedButton">Cu poze</button>
+                    <button (click)="filtrulMedia($event)" value="v" class="">Cu video</button>
+                    <button (click)="filtrulMedia($event)" value="t" class="">Doar text</button>
+                </div>
+            </div>
+            <div>
+                <div class="radio2 minsize">
+                    <div>
+                        <input type="radio" id="ieri" class="radioButton" name="radioButton2" value="0" (change)="filtrulData($event)">
+                        <label for="ieri">Ieri</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ultimele_7_zile" class="radioButton" name="radioButton2" value="1" (change)="filtrulData($event)">
+                        <label for="ultimele_7_zile">Ultimele 7 zile</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ultimele_28_zile" class="radioButton" name="radioButton2" value="2" (change)="filtrulData($event)">
+                        <label for="ultimele_28_zile">Ultimele 28 de zile</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ultimele_30_zile" class="radioButton" name="radioButton2" value="3" (change)="filtrulData($event)">
+                        <label for="ultimele_30_zile">Ultimele 30 de zile</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="luna_curenta" class="radioButton" name="radioButton2" value="4" (change)="filtrulData($event)">
+                        <label for="luna_curenta">Luna curenta</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="anul_curent" class="radioButton" name="radioButton2" value="5" (change)="filtrulData($event)">
+                        <label for="anul_curent">Anul curent</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="altele" class="radioButton" name="radioButton2" value="6" (change)="filtrulData($event)" checked>
+                        <label for="altele">Altele</label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="getFiltrulData()==6" class="radio2">
+                <label for="dataStart">Data de start</label>
+                <input type="date" id="dataStart" [value]="this.noutateFiltru.dataStart" (change)="filtrulDataStart($event)">
+                <label for="dataStop">Data de stop</label>
+                <input type="date" id="dataStop" value="{{this.noutateFiltru.dataSfarsit}}" (change)="filtrulDataStop($event)">
+            </div>
+        </div>
+        <div>
+            <div class="spatiere"></div>
+            <div *ngFor="let noutate of noutati">
+                <div class="linie subliniat" (click)="accesareNoutate($event,noutate.id)">
+                    <h1 class="customh1">{{noutate.titlu}}</h1> 
+                    <h2 class="customh2">{{noutate.dataPostare}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="linie centrat">
+        <div id="paginare">
+            <button class="pag" *ngIf="this.noutateFiltru.numarPagina>=4" (click)="goToPage($event, 0)">|←</button>
+            <button class="pag" *ngIf="this.noutateFiltru.numarPagina>=3" (click)="goToPage($event, noutateFiltru.numarPagina-3)">{{noutateFiltru.numarPagina-2}}</button>
+            <button class="pag" *ngIf="this.noutateFiltru.numarPagina>=2" (click)="goToPage($event, noutateFiltru.numarPagina-2)">{{noutateFiltru.numarPagina-1}}</button>
+            <button class="pag" *ngIf="this.noutateFiltru.numarPagina>=1" (click)="goToPage($event, noutateFiltru.numarPagina-1)">{{noutateFiltru.numarPagina}}</button>
+            <button class="pag selectedPage">{{noutateFiltru.numarPagina+1}}</button>
+            <button class="pag" *ngIf="this.totalPagini>=this.noutateFiltru.numarPagina+1 && this.noutateFiltru.numarPagina+1 != this.totalPagini" (click)="goToPage($event, noutateFiltru.numarPagina+1)">{{noutateFiltru.numarPagina+2}}</button>
+            <button class="pag" *ngIf="this.totalPagini>=this.noutateFiltru.numarPagina+2 && this.noutateFiltru.numarPagina+2 != this.totalPagini" (click)="goToPage($event, noutateFiltru.numarPagina+2)">{{noutateFiltru.numarPagina+3}}</button>
+            <button class="pag" *ngIf="this.totalPagini>=this.noutateFiltru.numarPagina+3 && this.noutateFiltru.numarPagina+3 != this.totalPagini" (click)="goToPage($event, noutateFiltru.numarPagina+3)">{{noutateFiltru.numarPagina+4}}</button>
+            <button class="pag" disabled *ngIf="this.totalPagini>=this.noutateFiltru.numarPagina+5">...</button><!--daca sunt 4 elemente sa apara ...-->
+            <button class="pag" *ngIf="this.totalPagini!=this.noutateFiltru.numarPagina" (click)="goToPage($event, totalPagini)">{{totalPagini+1}}</button><!--daca e doar o pagina, asta dispare-->
+        </div>
+    </div>
+</div>
+<app-subsol></app-subsol>

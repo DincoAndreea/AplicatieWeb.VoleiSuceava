@@ -1,0 +1,10 @@
+nav{
+    /*background-image: linear-gradient(to right, var(--background-content-color), var(--dark-blue-color));*/
+    background: linear-gradient(90deg, rgba(122,128,165,1) 7%, rgba(13,23,96,1) 52%);
+    min-width: 700px;
+    width: 100vw;
+    position: sticky;
+    top: 0px;
+    max-width: 100%;
+    z-index: 10;
+}

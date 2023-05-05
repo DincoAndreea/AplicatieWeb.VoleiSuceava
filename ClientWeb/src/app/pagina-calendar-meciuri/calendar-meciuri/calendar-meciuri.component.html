@@ -1,0 +1,50 @@
+<app-nav-bar></app-nav-bar>
+<div id="body">
+    <div id="titlu">
+        <p id="titlu-text">CALENDAR</p>
+    </div>
+    <div id="pag-calendar">
+        <div id="divizii-div">
+            <div id="divizii">
+                <div (click)="setDivizieFiltru($event, divi.id)" id="divizie" class="" *ngFor="let divi of divizii">
+                    {{divi.nume}}
+                </div>
+            </div>
+        </div>
+        <div id="tip-meci-div">
+            <div id="tip-meci">
+                <div id="meciuri-live" class="" (click)="redirectareCatrePreview($event, 'L')">Meciuri live</div>
+                <div id="meciuri-viitoare" class="" (click)="redirectareCatrePreview($event, 'V')">Meciuri viitoare</div>
+                <div id="meciuri-finalizate" class="" (click)="redirectareCatrePreview($event, 'A')">Meciuri finalizate</div>
+            </div>
+        </div>
+        <div id="filtre-div">
+            <div id="filtre">
+                <div id="calendar">
+                    <div id="calendar-text">CALENDAR</div>
+                    <div id="calendar-filtru">
+                        <div id="data-start-div">
+                            <label for="dataStart">Data de start</label>
+                            <input type="datetime-local" id="dataStart" value="" (change)="this.actualizareDataStart()">
+                        </div>
+                        <div id="data-stop-div">
+                            <label for="dataStop">Data de stop</label>
+                            <input type="datetime-local" id="dataStop" value="" (change)="this.actualizareDataStop()">
+                        </div>
+                    </div>
+                </div>
+                <div id="arhiva">
+                    <div id="arhiva-text">ARHIVĂ</div>
+                    <div id="arhiva-filtru">
+                        <div id="filtru-date-div" *ngFor="let i of [0,1,2,3,4,5]">
+                            <div (click)="this.actualizareDataDinArhiva(i)">
+                                {{this.populareArhivaFolosindId(i)}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-subsol></app-subsol>

@@ -1,0 +1,182 @@
+#meci-adaugare-bd {
+}
+
+#meci-adaugare-body {
+  background-color: #0d1760;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  row-gap: 30px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#date-meci-adaugare {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding-top: 50px;
+}
+
+#scor-meci1-adaugare-div,
+#scor-meci2-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#locatii-existente-adaugare {
+  display: flex;
+}
+
+#locatii-existente-div-adaugare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#locatii-existente-select-adaugare {
+  margin-top: 10px;
+}
+
+#inptxt {
+  outline: none;
+  border: 0;
+  margin-top: 5px;
+}
+
+#data-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#data-meci-input-adaugare {
+  margin-top: 5px;
+}
+
+#link-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+textarea {
+  margin-top: 5px;
+}
+
+#divizii-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-divizii-meci-adaugare {
+  margin-top: 5px;
+}
+
+#locatii-div-meci-adaugare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+#tara-div-meci-adaugare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#tara-input-meci-adaugare {
+  margin-top: 5px;
+}
+
+#judet-div-meci-adaugare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#judet-input-meci-adaugare {
+  margin-top: 5px;
+}
+
+#localitate-div-meci-adaugare {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#localitate-input-meci-adaugare {
+  margin-top: 5px;
+}
+
+#echipa1-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-echipa1-meci-adaugare {
+  margin-top: 5px;
+}
+
+#echipa2-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-echipa2-meci-adaugare {
+  margin-top: 5px;
+}
+
+#campionat-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-campionat-meci-adaugare {
+  margin-top: 5px;
+}
+
+#castigator-meci-adaugare-div {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#select-castigator-meci-adaugare {
+  margin-top: 5px;
+}
+
+#butoane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#b-modif,
+#b-anul,
+#b-ster,
+#btn-adauga {
+  width: 30%;
+  height: 60px;
+  border-radius: 0;
+  border: 0;
+  background-color: #dfebf3;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+
+#btn-adauga {
+  width: 20%;
+}
+
+#b-modif:active,
+#b-anul:active,
+#b-ster:active,
+#btn-adauga:active {
+  background-color: rgb(38, 38, 159);
+}

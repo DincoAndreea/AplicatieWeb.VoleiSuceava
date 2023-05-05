@@ -1,0 +1,38 @@
+<body>
+  <form class="general" [formGroup]="autentificareForm" (ngSubmit)="autentificare()">
+    <table>
+      <tr>
+        <h1>Autentificare</h1>
+      </tr>
+      <tr id="distantier">
+        <div>
+          <label for="utilizator">Utilizator</label>
+          <input type="text" name="numeUtilizator" id="numeUtilizator" placeholder="Utilizator"
+            formControlName="numeUtilizator" />
+        </div>
+      </tr>
+      <tr>
+        <div>
+          <label for="parola">Parola</label>
+          <input type="password" name="numeUtilizator" id="numeUtilizator" placeholder="Parola"
+            formControlName="parolaUtilizator" />
+        </div>
+      </tr>
+      <tr>
+        <label id="info">{{mesajFeedback}}
+        </label>
+      </tr>
+      <tr>
+        <button type="submit" class="buton">Conectare</button>
+      </tr>
+      <tr>
+        <button type="button" class="noMargin buton" (click)="deconectare2()">Deconectare</button>
+      </tr>
+      <tr>
+        <button type="button" class="noMargin buton" *ngIf="this.tipUtilizator=='a'" [routerLink]="['/autentificare/administrare']">Administrare conturi</button>
+      </tr>
+    </table>
+  </form>
+
+
+</body>

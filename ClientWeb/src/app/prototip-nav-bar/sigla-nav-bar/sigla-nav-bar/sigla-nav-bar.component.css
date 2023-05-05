@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: transparent;
+  min-width: 700px;
+}
+
+img {
+  height: 5rem;
+  width: 5rem;
+}
+
+#text-administrare {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+
+#sigla {
+  display: flex;
+  align-items: center;
+}
+
+#parte-sus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+#utilizatorActiv {
+  font-size: 15px;
+  text-align: center;
+  color: var(--white);
+  font-weight: lighter;
+}
+#btnadmin {
+  cursor: pointer;
+}

@@ -1,0 +1,60 @@
+<div id="meci-adaugare-bd">
+    <div id="meci-adaugare-body">
+        <div id="date-meci-adaugare">
+            <div id="scor-meci1-adaugare-div">
+                Scor echipa 1: <br>
+                <input type="number" id="inptxt" #scor1>
+            </div>
+            <div id="scor-meci2-adaugare-div">
+                Scor echipa 2: <br>
+                <input type="number" id="inptxt" #scor2>
+            </div>
+            <div id="data-meci-adaugare-div">
+                Data meci: <br>
+                <input type="datetime-local" name="" id="data-meci-input-adaugare" #data1>
+            </div>    
+            <div id="link-meci-adaugare-div">
+                Link meci: <br>
+                <textarea name="" id="" cols="30" rows="10" #link></textarea>
+            </div> 
+            <div id="divizii-meci-adaugare-div">
+                Divizie: <br>
+                <select name="" id="select-divizii-meci-adaugare" [size]="divizii.length" #divizie>
+                    <option [value]="d.nume" *ngFor="let d of divizii">{{d.nume}}</option> 
+                </select>
+            </div>       
+            <div id="locatii-existente-adaugare">
+                <div id="locatii-existente-div-adaugare">
+                    Locații: <br>
+                    <select name="" id="locatii-existente-select-adaugare" [size]="locatii.length">
+                        <option [value]="l.id" *ngFor="let l of locatii">{{l.judet.tara.tara}}, {{l.judet.judet}}, {{l.localitate}}</option>
+                    </select>
+                </div>
+            </div>
+            <div id="echipa1-meci-adaugare-div">
+                Echipa 1: <br>
+                <select name="" id="select-echipa1-meci-adaugare" [size]="echipa.length" #echipa1>
+                    <option [value]="e1.nume" *ngFor="let e1 of echipa">{{e1.nume}}</option>
+                </select>
+            </div>
+            <div id="echipa2-meci-adaugare-div">
+                Echipa 2: <br>
+                <select name="" id="select-echipa2-meci-adaugare" [size]="echipa.length" #echipa2>
+                    <option [value]="e2.nume" *ngFor="let e2 of echipa">{{e2.nume}}</option>
+                </select>
+            </div>
+            <div id="campionat-meci-adaugare-div">
+                Campionat: <br>
+                <select name="" id="select-campionat-meci-adaugare" [size]="campionate.length + 1" #campionat>
+                    <option [value]="c.denumire" *ngFor="let c of campionate">{{c.denumire}}</option>
+                    <option value="-1">Amicale</option>
+                </select>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Salvează" id="b-modif" (click)="Adauga(scor1.valueAsNumber,scor2.valueAsNumber,link.value,$event)">
+            <input type="button" value="Anulare" id="b-anul">
+        </div>
+    </div>
+</div>
+

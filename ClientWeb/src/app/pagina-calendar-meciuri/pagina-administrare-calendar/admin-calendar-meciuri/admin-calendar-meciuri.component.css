@@ -1,0 +1,108 @@
+#calendar-adm {
+  min-width: 700px;
+  height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: show;
+}
+
+#calendar-admin {
+  min-width: 700px;
+  background-color: #7a80a5;
+  height: 100%;
+  padding-bottom: 5rem;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#butoane-calendar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#butoane-calendar > * :hover {
+  cursor: pointer;
+}
+
+label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #262f6c;
+  margin: 0px -30px 0px 0px;
+  text-align: center;
+}
+
+#adaugare-modificare {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 30px;
+  width: 49vw;
+  min-width: fit-content;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 50px;
+  background-color: #dfebf3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#adauga:hover,
+#modifica:hover {
+  cursor: pointer;
+}
+
+#btn-divizii,
+#btn-meciuri,
+#btn-echipe,
+#btn-campionate,
+#btn-locatii {
+  width: fit-content;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  height: fit-content;
+  font-size: 34px;
+  border: none;
+  background-color: transparent;
+}
+
+#btncalendar {
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+  /* margin-top: 30px; */
+}
+
+#btn-divizii:focus,
+#btn-meciuri:focus,
+#btn-echipe:focus,
+#btn-campionate:focus,
+#btn-locatii:focus {
+  color: #0d1760;
+  transition: all 0.3s;
+}
+
+#divizii-component,
+#meciuri-component,
+#campionate-component,
+#echipe-component,
+#locatii-component,
+#adaugare-divizii,
+#adaugare-meciuri,
+#adaugare-campionate,
+#adaugare-echipe,
+#adaugare-locatii {
+  width: calc(100vw-210px);
+  padding-left: 210px;
+  padding-right: 210px;
+  min-width: fit-content;
+  position: relative;
+}
+
+#jucator,
+#antrenor {
+  padding-bottom: 60px;
+}

@@ -1,0 +1,70 @@
+<div id="calendar-adm">
+  <app-nav-bar></app-nav-bar>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <div id="calendar-admin">
+    <div id="butoane-calendar">
+      <div id="btncalendar">
+        <button id="btn-divizii" (click)="afisareDivizii()">Divizii</button>
+      </div>
+      <div id="btncalendar">
+        <button id="btn-meciuri" (click)="afisareMeciuri()">Meciuri</button>
+      </div>
+      <div id="btncalendar">
+        <button id="btn-campionate" (click)="afisareCampionate()">
+          Campionate
+        </button>
+      </div>
+      <div id="btncalendar">
+        <button id="btn-echipe" (click)="afisareEchipe()">Echipe</button>
+      </div>
+      <div id="btncalendar">
+        <button id="btn-locatii" (click)="afisareLocatii()">Locații</button>
+      </div>
+    </div>
+    <div id="adaugare-modificare">
+      <label for="adauga">Adaugă</label>
+      <input (click)="AfisareAdauga()" type="radio" name="alege" id="adauga" />
+      <label for="modifica">Modifică</label>
+      <input
+        (click)="AfisareModifica()"
+        type="radio"
+        name="alege"
+        id="modifica"
+      />
+    </div>
+    <div id="divizii-component" *ngIf="afisareDiv && afisbtnModifica">
+      <app-divizii-modif></app-divizii-modif>
+    </div>
+    <div id="meciuri-component" *ngIf="afisareMec && afisbtnModifica">
+      <app-meciuri-modif></app-meciuri-modif>
+    </div>
+    <div id="campionate-component" *ngIf="afisareCam && afisbtnModifica">
+      <app-campionate-modif></app-campionate-modif>
+    </div>
+    <div id="echipe-component" *ngIf="afisareEch && afisbtnModifica">
+      <app-echipe></app-echipe>
+    </div>
+    <div id="locatii-component" *ngIf="afisareLoc && afisbtnModifica">
+      <app-locatii-modif></app-locatii-modif>
+    </div>
+    <div id="adaugare-divizii" *ngIf="afisareDiv && afisbtnAdauga">
+      <app-divizii-adaugare></app-divizii-adaugare>
+    </div>
+    <div id="adaugare-meciuri" *ngIf="afisareMec && afisbtnAdauga">
+      <app-meciuri-adaugare></app-meciuri-adaugare>
+    </div>
+    <div id="adaugare-campionate" *ngIf="afisareCam && afisbtnAdauga">
+      <app-campionate-adaugare></app-campionate-adaugare>
+    </div>
+    <div id="adaugare-echipe" *ngIf="afisareEch && afisbtnAdauga">
+      <app-echipe-adaugare></app-echipe-adaugare>
+    </div>
+    <div id="adaugare-locatii" *ngIf="afisareLoc && afisbtnAdauga">
+      <app-locatii-adaugare></app-locatii-adaugare>
+    </div>
+  </div>
+  <app-subsol></app-subsol>
+</div>

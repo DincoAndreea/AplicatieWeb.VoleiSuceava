@@ -1,0 +1,14 @@
+<nav>
+    <div id="sigla">
+        <div>
+            <img src="assets\CSMLogo.png" alt="CSMLogo">
+        </div>
+        <ul>
+            <li><h1>Volei CSM Suceava</h1></li>
+        </ul>
+    </div>
+    <ul>
+        <li id="btnadmin"><a (click)="this.onClickEvent($event)">{{this.butonAdminDinamic}}</a></li>
+        <li id="utilizatorActiv" *ngIf="this.utilizatorActiv!='Vizitator'">{{this.utilizatorActiv}}</li> 
+    </ul>
+</nav>

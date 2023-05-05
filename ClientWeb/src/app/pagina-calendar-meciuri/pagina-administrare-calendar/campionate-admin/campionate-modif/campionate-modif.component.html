@@ -1,0 +1,56 @@
+<div id="camp-bd">
+    <div id="campionat-body" *ngFor="let c of campionate">
+        <div id="date-echipa">
+            <div id="nume-cam-div">
+                Nume campionat: <br>
+                <textarea type="text" id="inptxt" [value]="c.denumire" #nume></textarea>
+            </div>
+            <div id="data-inceput-campionat-modificare-div">
+                Data început: <br>
+                <input type="date" name="" [value]="c.dataIncepere" id="data-inceput-campionat-modificare-input">
+            </div>    
+            <div id="data-sfarsit-campionat-modificare-div">
+                Data sfârșit: <br>
+                <input type="date" name="" [value]="c.dataSfarsit" id="data-sfarsit-campionat-modificare-input">
+            </div>  
+            <div id="locatie-alegere-modificare">
+                <div id="localitate-div-campionat-modificare-select1" *ngIf="c.localitate == null">
+                    Locație: <br>
+                    <select name="" id="localitate-campionat-modificare-select1" [size]="locatii.length + 1">
+                        <option [value]="l.id" *ngFor="let l of locatii">{{l.judet.tara.tara}}, {{l.judet.judet}}, {{l.localitate}}</option>
+                        <option value="-1">Fără locație</option>
+                    </select>
+                </div>
+                <div id="localitate-div-campionat-modificare-select2" *ngIf="c.localitate != null">
+                    Locație: <br>
+                    <select name="" id="localitate-campionat-modificare-select2" [size]="locatii.length + 1">
+                        <option [selected]="(c.localitate.id == l.id) && (c.localitate != null)" [value]="l.id" *ngFor="let l of locatii">{{l.judet.tara.tara}}, {{l.judet.judet}}, {{l.localitate}}</option>
+                        <option value="-1">Fără locație</option>
+                    </select>
+                </div>
+                <div id="locatie-noua-modificare">
+                    <div id="nume-tara-campionat-modificare-div">
+                        Locație nouă <br><br>
+                        Țara: <br>
+                        <textarea type="text" id="inptxt"  #tara></textarea>
+                    </div>
+                    <div id="nume-judet-campionat-modificare-div">
+                        <br><br> Județ: <br>
+                        <textarea type="text" id="inptxt"  #judet></textarea>
+                    </div>
+                    <div id="nume-localitate-campionat-modificare-div">
+                        <br><br> Localitate: <br>
+                        <textarea type="text" id="inptxt"  #localitate></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="butoane">
+            <input type="button" value="Modifică" id="b-modif" (click)="Modifica(nume.value,c.id,tara.value,judet.value,localitate.value,c.localitate,$event)">
+            <input type="button" value="Anulare" id="b-anul">
+            <input type="button" value="Șterge" id="b-ster" (click)="Sterge(c)">
+        </div>
+    </div>
+</div>
+
+
